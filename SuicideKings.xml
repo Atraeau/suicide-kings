@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
+..\FrameXML\UI.xsd">
+  <Script file="SuicideKings.lua"/>
+  <Frame name="SuicideKingsFrame" toplevel="true" parent="UIParent" movable="true" enableMouse="true" hidden="false" inherits="ButtonFrameTemplate">
+    <Layers>
+      <Layer level="OVERLAY" textureSubLevel="-1">
+        <Texture name="$parentIcon" file="Interface\FriendsFrame\FriendsFrameScrollIcon">
+          <Size x="60" y="60"/>
+          <Anchors>
+            <Anchor point="TOPLEFT" x="-5" y="7"/>
+          </Anchors>
+        </Texture>
+      </Layer>
+      <Layer level="OVERLAY">
+        <FontString name="SuicideKingsTitleText" inherits="GameFontNormal">
+          <Size x="250" y="16"/>
+          <Anchors>
+            <Anchor point="TOP" x="3" y="-3"/>
+          </Anchors>
+        </FontString>
+      </Layer>
+    </Layers>
+    <Anchors>
+      <Anchor point="CENTER"/>
+    </Anchors>
+    <Frames>
+      <Layers>
+        <Layer level="ARTWORK">
+          <Texture name="$parentBarLeft" file="Interface\ClassTrainerFrame\UI-ClassTrainer-HorizontalBar">
+            <Size x="256" y="16"/>
+            <Anchors>
+              <Anchor point="LEFT" x="1" y="0"/>
+              <Anchor point="RIGHT" x="-75" y="0"/>
+              <Anchor point="BOTTOM" relativeTo="$parent" relativePoint="BOTTOM" x="0" y="89"/>
+            </Anchors>
+            <TexCoords left="0" right="1.0" top="0" bottom="0.25"/>
+          </Texture>
+          <Texture file="Interface\ClassTrainerFrame\UI-ClassTrainer-HorizontalBar">
+            <Size x="70" y="16"/>
+            <Anchors>
+              <Anchor point="LEFT" relativeTo="$parentBarLeft" relativePoint="RIGHT"/>
+            </Anchors>
+            <TexCoords left="0" right="0.29296875" top="0.25" bottom="0.5"/>
+          </Texture>
+        </Layer>
+      </Layers>
+    </Frames>
+    <Scripts>
+      <OnShow>
+          SuicideKings_OnShow();
+      </OnShow>
+    </Scripts>
+  </Frame>
+</Ui>
