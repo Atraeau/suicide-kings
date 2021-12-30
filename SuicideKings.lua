@@ -1,4 +1,4 @@
-SK_GUILDMEMBERS_TO_DISPLAY = 13;
+SK_GUILDMEMBERS_TO_DISPLAY = 21;
 SK_GUILDMEMBERS_TO_HEIGHT = SK_GUILDMEMBERS_TO_DISPLAY + 1;
 
 SK_EVENT_NAME_ADDON_LOADED = "ADDON_LOADED"
@@ -17,6 +17,18 @@ end
 function SuicideKings_OnLoad(self)
     self:RegisterEvent(SK_EVENT_NAME_ADDON_LOADED); -- Fired when saved variables are loaded
     self:RegisterEvent(SK_EVENT_NAME_PLAYER_LOGOUT); -- Fired when about to log out
+    RegisterSlashCommand()
+    --PanelTemplates_SetNumTabs(self, 2);
+    --PanelTemplates_SetTab(self, 1)
+end
+
+function RegisterSlashCommand()
+    SlashCmdList["SUICIDEKINGS"] = HandleSlashCommand
+    SLASH_SUICIDEKINGS1 = "/sk"
+end
+
+function HandleSlashCommand(arg)
+    SuicideKingsFrame:Show()
 end
 
 function SuicideKings_OnShow()
@@ -25,9 +37,8 @@ function SuicideKings_OnShow()
 end
 
 function SuicideKings_Update()
-    SuicideKingsTitleText:SetText("Suicide Kings");
+    SuicideKingsFrameInset:SetPoint("TOPLEFT", 4, -80);
     PopulateGuildMembers();
-    print("update")
 end
 
 function PopulateGuildMembers()
@@ -47,10 +58,11 @@ function PopulateGuildMembers()
         button.guildIndex = rosterIdx;
 
         local fullName, rank, rankIndex, level, class, zone, note, officernote, online = GetGuildRosterInfo(rosterIdx);
-        local displayedName = Ambiguate(fullName, "guild");
-
-        getglobal("SuicideKingsPlayerListButton"..displayButtonIdx.."Name"):SetText(displayedName);
-        getglobal("SuicideKingsPlayerListButton"..displayButtonIdx.."Rank"):SetText(rank);
+        if not IsEmpty(fullName) then
+            local displayedName = Ambiguate(fullName, "guild");
+            getglobal("SuicideKingsPlayerListButton"..displayButtonIdx.."Name"):SetText(displayedName);
+            getglobal("SuicideKingsPlayerListButton"..displayButtonIdx.."Rank"):SetText(rank);
+        end
     end
 end
 
@@ -58,6 +70,10 @@ end
 function SuicideKings_CreateList()
     print("Create")
     SuicideKingsList = CreateSuicideList()
+end
+
+function SuicideKings_DeleteList()
+    SuicideKingsList = nil
 end
 
 -- Static function to create list and return (stateless)
@@ -75,6 +91,10 @@ function CreateSuicideList()
     return suicideList
 end
 
+function IsEmpty(s)
+    return s == nil or s == ''
+end
+
 function ReadSuicideList(list)
     for i,v in ipairs(list) do print("Name: "..v.. " Position: "..i) end
 end
@@ -82,9 +102,14 @@ end
 function UpdateSuicideList(list)
 end
 
-function DeleteSuicideList(list)
-    list = nil
+function RandomizeSuicideList(suicideList)
 end
 
-function RandomizeSuicideList(suicideList)
+function SuicideKingsGuildListColumn_SetWidth(frame, width)
+	frame:SetWidth(width);
+	local name = frame:GetName().."Middle";
+	local middleFrame = _G[name];
+	if middleFrame then
+		middleFrame:SetWidth(width - 9);
+	end
 end

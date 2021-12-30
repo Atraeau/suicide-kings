@@ -2,154 +2,35 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
 ..\FrameXML\UI.xsd">
   <Script file="SuicideKings.lua"/>
-  <!--Templates-->
-  <Button name="SuicideKingsPlayerListButtonTemplate" virtual="true">
-    <Size>
-      <AbsDimension x="298" y="16" />
-    </Size>
-    <Layers>
-      <Layer level="BORDER">
-        <FontString name="$parentName" inherits="GameFontNormalSmall" justifyH="LEFT">
-          <Size>
-            <AbsDimension x="75" y="14" />
-          </Size>
-          <Anchors>
-            <Anchor point="TOPLEFT">
-              <Offset>
-                <AbsDimension x="14" y="-3" />
-              </Offset>
-            </Anchor>
-          </Anchors>
-        </FontString>
-        <FontString name="$parentRank" inherits="GameFontHighlightSmall" justifyH="LEFT">
-          <Size>
-            <AbsDimension x="55" y="14" />
-          </Size>
-          <Anchors>
-            <Anchor point="LEFT" relativeTo="$parentName" relativePoint="RIGHT">
-              <Offset>
-                <AbsDimension x="5" y="0" />
-              </Offset>
-            </Anchor>
-          </Anchors>
-        </FontString>
-      </Layer>
-    </Layers>
-    <HighlightTexture file="Interface\FriendsFrame\UI-FriendsFrame-HighlightBar" alphaMode="ADD">
-      <Size>
-        <AbsDimension x="298" y="16" />
-      </Size>
-      <Anchors>
-        <Anchor point="TOP">
-          <Offset>
-            <AbsDimension x="5" y="-2" />
-          </Offset>
-        </Anchor>
-      </Anchors>
-    </HighlightTexture>
-  </Button>
-  <Button name="SuicideKingsGuildListColumnHeaderTemplate" virtual="true">
-    <Size>
-      <AbsDimension x="10" y="24" />
-    </Size>
-    <Layers>
-      <Layer level="BACKGROUND">
-        <Texture name="$parentLeft" file="Interface\FriendsFrame\WhoFrame-ColumnTabs">
-          <Size>
-            <AbsDimension x="5" y="24" />
-          </Size>
-          <Anchors>
-            <Anchor point="TOPLEFT" />
-          </Anchors>
-          <TexCoords left="0" right="0.078125" top="0" bottom="0.75" />
-        </Texture>
-        <Texture name="$parentMiddle" file="Interface\FriendsFrame\WhoFrame-ColumnTabs">
-          <Size>
-            <AbsDimension x="53" y="24" />
-          </Size>
-          <Anchors>
-            <Anchor point="LEFT" relativeTo="$parentLeft" relativePoint="RIGHT" />
-          </Anchors>
-          <TexCoords left="0.078125" right="0.90625" top="0" bottom="0.75" />
-        </Texture>
-        <Texture name="$parentRight" file="Interface\FriendsFrame\WhoFrame-ColumnTabs">
-          <Size>
-            <AbsDimension x="4" y="24" />
-          </Size>
-          <Anchors>
-            <Anchor point="LEFT" relativeTo="$parentMiddle" relativePoint="RIGHT" />
-          </Anchors>
-          <TexCoords left="0.90625" right="0.96875" top="0" bottom="0.75" />
-        </Texture>
-      </Layer>
-    </Layers>
-    <ButtonText>
-      <Anchors>
-        <Anchor point="LEFT">
-          <Offset>
-            <AbsDimension x="8" y="0" />
-          </Offset>
-        </Anchor>
-      </Anchors>
-    </ButtonText>
-    <NormalFont style="GameFontHighlightSmall" />
-  </Button>
-  <Button name="SuicideKingsTabTemplate" inherits="CharacterFrameTabButtonTemplate" virtual="true">
-    <Scripts>
-      <OnClick>
-        --PanelTemplates_Tab_OnClick(self, FriendsFrame);
-        --FriendsFrame_OnShow();
-      </OnClick>
-    </Scripts>
-  </Button>
+  <Include file="SuicideKingsTemplates.xml"/>
   <Frame name="SuicideKingsFrame" toplevel="true" parent="UIParent" movable="true" enableMouse="true" hidden="false" inherits="ButtonFrameTemplate">
+    <Size x="832" y="447"/>
+    <Anchors>
+      <Anchor point="CENTER" x="0" y="250"/>
+    </Anchors>
     <Layers>
       <Layer level="OVERLAY" textureSubLevel="-1">
         <Texture name="$parentIcon" file="Interface\FriendsFrame\FriendsFrameScrollIcon">
-          <Size x="60" y="60"/>
+          <Size x="60" y="60" />
           <Anchors>
-            <Anchor point="TOPLEFT" x="-5" y="7"/>
+            <Anchor point="TOPLEFT" x="-5" y="7" />
           </Anchors>
         </Texture>
       </Layer>
-      <Layer level="OVERLAY">
-        <FontString name="SuicideKingsTitleText" inherits="GameFontNormal">
-          <Size x="250" y="16"/>
+      <Layer level="BACKGROUND">
+        <FontString name="SuicideKingsTitleText" inherits="GameFontNormal" text="Suicide Kings">
           <Anchors>
-            <Anchor point="TOP" x="3" y="-3"/>
+            <Anchor point="TOP" x="3" y="-5"/>
           </Anchors>
         </FontString>
       </Layer>
     </Layers>
-    <Anchors>
-      <Anchor point="CENTER"/>
-    </Anchors>
     <Frames>
       <!-- Frame providing options to configure a list -->
       <Frame name="SuicideKingsConfigFrame" setAllPoints="true" hidden="true">
       </Frame>
       <!-- Frame showing the current list -->
       <Frame name="SuicideKingsListFrame" setAllPoints="true" hidden="false">
-        <Layers>
-          <Layer level="ARTWORK">
-            <Texture name="$parentBarLeft" file="Interface\ClassTrainerFrame\UI-ClassTrainer-HorizontalBar">
-              <Size x="256" y="16" />
-              <Anchors>
-                <Anchor point="LEFT" x="1" y="0" />
-                <Anchor point="RIGHT" x="-75" y="0" />
-                <Anchor point="BOTTOM" relativeTo="$parent" relativePoint="BOTTOM" x="0" y="89" />
-              </Anchors>
-              <TexCoords left="0" right="1.0" top="0" bottom="0.25" />
-            </Texture>
-            <Texture file="Interface\ClassTrainerFrame\UI-ClassTrainer-HorizontalBar">
-              <Size x="70" y="16" />
-              <Anchors>
-                <Anchor point="LEFT" relativeTo="$parentBarLeft" relativePoint="RIGHT" />
-              </Anchors>
-              <TexCoords left="0" right="0.29296875" top="0.25" bottom="0.5" />
-            </Texture>
-          </Layer>
-        </Layers>
         <Frames>
           <Frame name="GuildListFrame">
             <Size>
@@ -173,7 +54,7 @@
                 </Anchors>
                 <Scripts>
                   <OnLoad>
-                      self:SetWidth(83);
+                      SuicideKingsGuildListColumn_SetWidth(self, 100)
                   </OnLoad>
                   <OnClick>
                       SuicideKings_CreateList();
@@ -190,7 +71,7 @@
                 </Anchors>
                 <Scripts>
                   <OnLoad>
-                      self:SetWidth(100);
+                      SuicideKingsGuildListColumn_SetWidth(self, 100)
                   </OnLoad>
                   <OnClick>
                       SuicideKings_DeleteList();
@@ -314,6 +195,78 @@
                   </Anchor>
                 </Anchors>
               </Button>
+              <Button name="SuicideKingsPlayerListButton14" inherits="SuicideKingsPlayerListButtonTemplate" id="14">
+                <Anchors>
+                  <Anchor point="TOPLEFT" relativeTo="SuicideKingsPlayerListButton13" relativePoint="BOTTOMLEFT">
+                    <Offset>
+                      <AbsDimension x="0" y="0" />
+                    </Offset>
+                  </Anchor>
+                </Anchors>
+              </Button>
+              <Button name="SuicideKingsPlayerListButton15" inherits="SuicideKingsPlayerListButtonTemplate" id="15">
+                <Anchors>
+                  <Anchor point="TOPLEFT" relativeTo="SuicideKingsPlayerListButton14" relativePoint="BOTTOMLEFT">
+                    <Offset>
+                      <AbsDimension x="0" y="0" />
+                    </Offset>
+                  </Anchor>
+                </Anchors>
+              </Button>
+              <Button name="SuicideKingsPlayerListButton16" inherits="SuicideKingsPlayerListButtonTemplate" id="16">
+                <Anchors>
+                  <Anchor point="TOPLEFT" relativeTo="SuicideKingsPlayerListButton15" relativePoint="BOTTOMLEFT">
+                    <Offset>
+                      <AbsDimension x="0" y="0" />
+                    </Offset>
+                  </Anchor>
+                </Anchors>
+              </Button>
+              <Button name="SuicideKingsPlayerListButton17" inherits="SuicideKingsPlayerListButtonTemplate" id="17">
+                <Anchors>
+                  <Anchor point="TOPLEFT" relativeTo="SuicideKingsPlayerListButton16" relativePoint="BOTTOMLEFT">
+                    <Offset>
+                      <AbsDimension x="0" y="0" />
+                    </Offset>
+                  </Anchor>
+                </Anchors>
+              </Button>
+              <Button name="SuicideKingsPlayerListButton18" inherits="SuicideKingsPlayerListButtonTemplate" id="18">
+                <Anchors>
+                  <Anchor point="TOPLEFT" relativeTo="SuicideKingsPlayerListButton17" relativePoint="BOTTOMLEFT">
+                    <Offset>
+                      <AbsDimension x="0" y="0" />
+                    </Offset>
+                  </Anchor>
+                </Anchors>
+              </Button>
+              <Button name="SuicideKingsPlayerListButton19" inherits="SuicideKingsPlayerListButtonTemplate" id="19">
+                <Anchors>
+                  <Anchor point="TOPLEFT" relativeTo="SuicideKingsPlayerListButton18" relativePoint="BOTTOMLEFT">
+                    <Offset>
+                      <AbsDimension x="0" y="0" />
+                    </Offset>
+                  </Anchor>
+                </Anchors>
+              </Button>
+              <Button name="SuicideKingsPlayerListButton20" inherits="SuicideKingsPlayerListButtonTemplate" id="20">
+                <Anchors>
+                  <Anchor point="TOPLEFT" relativeTo="SuicideKingsPlayerListButton19" relativePoint="BOTTOMLEFT">
+                    <Offset>
+                      <AbsDimension x="0" y="0" />
+                    </Offset>
+                  </Anchor>
+                </Anchors>
+              </Button>
+              <Button name="SuicideKingsPlayerListButton21" inherits="SuicideKingsPlayerListButtonTemplate" id="21">
+                <Anchors>
+                  <Anchor point="TOPLEFT" relativeTo="SuicideKingsPlayerListButton20" relativePoint="BOTTOMLEFT">
+                    <Offset>
+                      <AbsDimension x="0" y="0" />
+                    </Offset>
+                  </Anchor>
+                </Anchors>
+              </Button>
             </Frames>
           </Frame>
           <ScrollFrame name="SuicideKingsPlayerListScrollFrame" inherits="FauxScrollFrameTemplate">
@@ -371,8 +324,8 @@
         </Anchors>
         <Scripts>
           <OnShow>
-            --self:SetWidth(0);
-            --PanelTemplates_TabResize(self, 0, nil);
+            self:SetWidth(0);
+            PanelTemplates_TabResize(self, 0, nil);
           </OnShow>
           <OnEnter>
             --GameTooltip_AddNewbieTip(self, MicroButtonTooltipText(FRIENDS, "TOGGLEFRIENDSTAB"), 1.0, 1.0, 1.0, NEWBIE_TOOLTIP_FRIENDSTAB, 1);
