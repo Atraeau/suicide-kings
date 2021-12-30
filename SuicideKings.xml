@@ -175,6 +175,9 @@
                   <OnLoad>
                       self:SetWidth(83);
                   </OnLoad>
+                  <OnClick>
+                      SuicideKings_CreateList();
+                  </OnClick>
                 </Scripts>
               </Button>
               <Button name="GuildListRankHeader" inherits="SuicideKingsGuildListColumnHeaderTemplate" text="Rank">
@@ -185,6 +188,14 @@
                     </Offset>
                   </Anchor>
                 </Anchors>
+                <Scripts>
+                  <OnLoad>
+                      self:SetWidth(100);
+                  </OnLoad>
+                  <OnClick>
+                      SuicideKings_DeleteList();
+                  </OnClick>
+                </Scripts>
               </Button>
               <Button name="SuicideKingsPlayerListButton1" inherits="SuicideKingsPlayerListButtonTemplate" id="1">
                 <Anchors>
@@ -389,6 +400,8 @@
       <OnShow>
           SuicideKings_OnShow();
       </OnShow>
+      <OnLoad inherit="prepend" function="SuicideKings_OnLoad"/>
+      <OnEvent function="SuicideKings_OnEvent"/>
     </Scripts>
   </Frame>
 </Ui>
