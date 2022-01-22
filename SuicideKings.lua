@@ -42,6 +42,7 @@ function SuicideKings_Update()
 end
 
 function PopulateGuildMembers()
+    -- print("PopulateGuileMembers")
     local numGuildMembers;
     local totalMembers, onlineMembers, onlineAndMobileMembers = GetNumGuildMembers();
 
@@ -64,6 +65,8 @@ function PopulateGuildMembers()
             getglobal("SuicideKingsPlayerListButton"..displayButtonIdx.."Rank"):SetText(rank);
         end
     end
+
+    FauxScrollFrame_Update(SuicideKingsPlayerListScrollFrame, totalMembers, SK_GUILDMEMBERS_TO_DISPLAY, SK_GUILDMEMBERS_TO_HEIGHT );
 end
 
 -- Statefull function to assign the new list to the shared variable "SuicideKingsList"
