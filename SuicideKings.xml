@@ -10,11 +10,12 @@
     </Anchors>
     <Layers>
       <Layer level="OVERLAY" textureSubLevel="-1">
-        <Texture name="$parentIcon" file="Interface\FriendsFrame\FriendsFrameScrollIcon">
-          <Size x="60" y="60" />
+        <Texture name="$parentIcon" file="Interface\ICONS\INV_Crown_02">
+          <Size x="56" y="56" />
           <Anchors>
-            <Anchor point="TOPLEFT" x="-5" y="7" />
+            <Anchor point="TOPLEFT" x="-3" y="6" />
           </Anchors>
+          <TexCoords top="0.0" bottom="1.0" left="0.0" right="1.0" />
         </Texture>
       </Layer>
       <Layer level="BACKGROUND">
