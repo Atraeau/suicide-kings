@@ -31,9 +31,9 @@
       <Frame name="SuicideKingsConfigFrame" setAllPoints="true" hidden="true">
       </Frame>
       <!-- Frame showing the current list -->
-      <Frame name="SuicideKingsListFrame" setAllPoints="true" hidden="false">
+      <Frame name="SKFrameGuildList" setAllPoints="true" hidden="false">
         <Frames>
-          <Frame name="GuildListFrame">
+          <Frame name="SKFrameGuildList">
             <Size>
               <AbsDimension x="300" y="200" />
             </Size>
@@ -79,189 +79,189 @@
                   </OnClick>
                 </Scripts>
               </Button>
-              <Button name="SuicideKingsPlayerListButton1" inherits="SuicideKingsPlayerListButtonTemplate" id="1">
+              <Button name="SKButtonPlayerListItem1" inherits="SKButtonTemplatePlayerListItem" id="1">
                 <Anchors>
-                  <Anchor point="TOPLEFT" relativeTo="GuildListFrame">
+                  <Anchor point="TOPLEFT" relativeTo="SKFrameGuildList">
                     <Offset>
                       <AbsDimension x="3" y="-82" />
                     </Offset>
                   </Anchor>
                 </Anchors>
               </Button>
-              <Button name="SuicideKingsPlayerListButton2" inherits="SuicideKingsPlayerListButtonTemplate" id="2">
+              <Button name="SKButtonPlayerListItem2" inherits="SKButtonTemplatePlayerListItem" id="2">
                 <Anchors>
-                  <Anchor point="TOPLEFT" relativeTo="SuicideKingsPlayerListButton1" relativePoint="BOTTOMLEFT">
+                  <Anchor point="TOPLEFT" relativeTo="SKButtonPlayerListItem1" relativePoint="BOTTOMLEFT">
                     <Offset>
                       <AbsDimension x="0" y="0" />
                     </Offset>
                   </Anchor>
                 </Anchors>
               </Button>
-              <Button name="SuicideKingsPlayerListButton3" inherits="SuicideKingsPlayerListButtonTemplate" id="3">
+              <Button name="SKButtonPlayerListItem3" inherits="SKButtonTemplatePlayerListItem" id="3">
                 <Anchors>
-                  <Anchor point="TOPLEFT" relativeTo="SuicideKingsPlayerListButton2" relativePoint="BOTTOMLEFT">
+                  <Anchor point="TOPLEFT" relativeTo="SKButtonPlayerListItem2" relativePoint="BOTTOMLEFT">
                     <Offset>
                       <AbsDimension x="0" y="0" />
                     </Offset>
                   </Anchor>
                 </Anchors>
               </Button>
-              <Button name="SuicideKingsPlayerListButton4" inherits="SuicideKingsPlayerListButtonTemplate" id="4">
+              <Button name="SKButtonPlayerListItem4" inherits="SKButtonTemplatePlayerListItem" id="4">
                 <Anchors>
-                  <Anchor point="TOPLEFT" relativeTo="SuicideKingsPlayerListButton3" relativePoint="BOTTOMLEFT">
+                  <Anchor point="TOPLEFT" relativeTo="SKButtonPlayerListItem3" relativePoint="BOTTOMLEFT">
                     <Offset>
                       <AbsDimension x="0" y="0" />
                     </Offset>
                   </Anchor>
                 </Anchors>
               </Button>
-              <Button name="SuicideKingsPlayerListButton5" inherits="SuicideKingsPlayerListButtonTemplate" id="5">
+              <Button name="SKButtonPlayerListItem5" inherits="SKButtonTemplatePlayerListItem" id="5">
                 <Anchors>
-                  <Anchor point="TOPLEFT" relativeTo="SuicideKingsPlayerListButton4" relativePoint="BOTTOMLEFT">
+                  <Anchor point="TOPLEFT" relativeTo="SKButtonPlayerListItem4" relativePoint="BOTTOMLEFT">
                     <Offset>
                       <AbsDimension x="0" y="0" />
                     </Offset>
                   </Anchor>
                 </Anchors>
               </Button>
-              <Button name="SuicideKingsPlayerListButton6" inherits="SuicideKingsPlayerListButtonTemplate" id="6">
+              <Button name="SKButtonPlayerListItem6" inherits="SKButtonTemplatePlayerListItem" id="6">
                 <Anchors>
-                  <Anchor point="TOPLEFT" relativeTo="SuicideKingsPlayerListButton5" relativePoint="BOTTOMLEFT">
+                  <Anchor point="TOPLEFT" relativeTo="SKButtonPlayerListItem5" relativePoint="BOTTOMLEFT">
                     <Offset>
                       <AbsDimension x="0" y="0" />
                     </Offset>
                   </Anchor>
                 </Anchors>
               </Button>
-              <Button name="SuicideKingsPlayerListButton7" inherits="SuicideKingsPlayerListButtonTemplate" id="7">
+              <Button name="SKButtonPlayerListItem7" inherits="SKButtonTemplatePlayerListItem" id="7">
                 <Anchors>
-                  <Anchor point="TOPLEFT" relativeTo="SuicideKingsPlayerListButton6" relativePoint="BOTTOMLEFT">
+                  <Anchor point="TOPLEFT" relativeTo="SKButtonPlayerListItem6" relativePoint="BOTTOMLEFT">
                     <Offset>
                       <AbsDimension x="0" y="0" />
                     </Offset>
                   </Anchor>
                 </Anchors>
               </Button>
-              <Button name="SuicideKingsPlayerListButton8" inherits="SuicideKingsPlayerListButtonTemplate" id="8">
+              <Button name="SKButtonPlayerListItem8" inherits="SKButtonTemplatePlayerListItem" id="8">
                 <Anchors>
-                  <Anchor point="TOPLEFT" relativeTo="SuicideKingsPlayerListButton7" relativePoint="BOTTOMLEFT">
+                  <Anchor point="TOPLEFT" relativeTo="SKButtonPlayerListItem7" relativePoint="BOTTOMLEFT">
                     <Offset>
                       <AbsDimension x="0" y="0" />
                     </Offset>
                   </Anchor>
                 </Anchors>
               </Button>
-              <Button name="SuicideKingsPlayerListButton9" inherits="SuicideKingsPlayerListButtonTemplate" id="9">
+              <Button name="SKButtonPlayerListItem9" inherits="SKButtonTemplatePlayerListItem" id="9">
                 <Anchors>
-                  <Anchor point="TOPLEFT" relativeTo="SuicideKingsPlayerListButton8" relativePoint="BOTTOMLEFT">
+                  <Anchor point="TOPLEFT" relativeTo="SKButtonPlayerListItem8" relativePoint="BOTTOMLEFT">
                     <Offset>
                       <AbsDimension x="0" y="0" />
                     </Offset>
                   </Anchor>
                 </Anchors>
               </Button>
-              <Button name="SuicideKingsPlayerListButton10" inherits="SuicideKingsPlayerListButtonTemplate" id="10">
+              <Button name="SKButtonPlayerListItem10" inherits="SKButtonTemplatePlayerListItem" id="10">
                 <Anchors>
-                  <Anchor point="TOPLEFT" relativeTo="SuicideKingsPlayerListButton9" relativePoint="BOTTOMLEFT">
+                  <Anchor point="TOPLEFT" relativeTo="SKButtonPlayerListItem9" relativePoint="BOTTOMLEFT">
                     <Offset>
                       <AbsDimension x="0" y="0" />
                     </Offset>
                   </Anchor>
                 </Anchors>
               </Button>
-              <Button name="SuicideKingsPlayerListButton11" inherits="SuicideKingsPlayerListButtonTemplate" id="11">
+              <Button name="SKButtonPlayerListItem11" inherits="SKButtonTemplatePlayerListItem" id="11">
                 <Anchors>
-                  <Anchor point="TOPLEFT" relativeTo="SuicideKingsPlayerListButton10" relativePoint="BOTTOMLEFT">
+                  <Anchor point="TOPLEFT" relativeTo="SKButtonPlayerListItem10" relativePoint="BOTTOMLEFT">
                     <Offset>
                       <AbsDimension x="0" y="0" />
                     </Offset>
                   </Anchor>
                 </Anchors>
               </Button>
-              <Button name="SuicideKingsPlayerListButton12" inherits="SuicideKingsPlayerListButtonTemplate" id="12">
+              <Button name="SKButtonPlayerListItem12" inherits="SKButtonTemplatePlayerListItem" id="12">
                 <Anchors>
-                  <Anchor point="TOPLEFT" relativeTo="SuicideKingsPlayerListButton11" relativePoint="BOTTOMLEFT">
+                  <Anchor point="TOPLEFT" relativeTo="SKButtonPlayerListItem11" relativePoint="BOTTOMLEFT">
                     <Offset>
                       <AbsDimension x="0" y="0" />
                     </Offset>
                   </Anchor>
                 </Anchors>
               </Button>
-              <Button name="SuicideKingsPlayerListButton13" inherits="SuicideKingsPlayerListButtonTemplate" id="13">
+              <Button name="SKButtonPlayerListItem13" inherits="SKButtonTemplatePlayerListItem" id="13">
                 <Anchors>
-                  <Anchor point="TOPLEFT" relativeTo="SuicideKingsPlayerListButton12" relativePoint="BOTTOMLEFT">
+                  <Anchor point="TOPLEFT" relativeTo="SKButtonPlayerListItem12" relativePoint="BOTTOMLEFT">
                     <Offset>
                       <AbsDimension x="0" y="0" />
                     </Offset>
                   </Anchor>
                 </Anchors>
               </Button>
-              <Button name="SuicideKingsPlayerListButton14" inherits="SuicideKingsPlayerListButtonTemplate" id="14">
+              <Button name="SKButtonPlayerListItem14" inherits="SKButtonTemplatePlayerListItem" id="14">
                 <Anchors>
-                  <Anchor point="TOPLEFT" relativeTo="SuicideKingsPlayerListButton13" relativePoint="BOTTOMLEFT">
+                  <Anchor point="TOPLEFT" relativeTo="SKButtonPlayerListItem13" relativePoint="BOTTOMLEFT">
                     <Offset>
                       <AbsDimension x="0" y="0" />
                     </Offset>
                   </Anchor>
                 </Anchors>
               </Button>
-              <Button name="SuicideKingsPlayerListButton15" inherits="SuicideKingsPlayerListButtonTemplate" id="15">
+              <Button name="SKButtonPlayerListItem15" inherits="SKButtonTemplatePlayerListItem" id="15">
                 <Anchors>
-                  <Anchor point="TOPLEFT" relativeTo="SuicideKingsPlayerListButton14" relativePoint="BOTTOMLEFT">
+                  <Anchor point="TOPLEFT" relativeTo="SKButtonPlayerListItem14" relativePoint="BOTTOMLEFT">
                     <Offset>
                       <AbsDimension x="0" y="0" />
                     </Offset>
                   </Anchor>
                 </Anchors>
               </Button>
-              <Button name="SuicideKingsPlayerListButton16" inherits="SuicideKingsPlayerListButtonTemplate" id="16">
+              <Button name="SKButtonPlayerListItem16" inherits="SKButtonTemplatePlayerListItem" id="16">
                 <Anchors>
-                  <Anchor point="TOPLEFT" relativeTo="SuicideKingsPlayerListButton15" relativePoint="BOTTOMLEFT">
+                  <Anchor point="TOPLEFT" relativeTo="SKButtonPlayerListItem15" relativePoint="BOTTOMLEFT">
                     <Offset>
                       <AbsDimension x="0" y="0" />
                     </Offset>
                   </Anchor>
                 </Anchors>
               </Button>
-              <Button name="SuicideKingsPlayerListButton17" inherits="SuicideKingsPlayerListButtonTemplate" id="17">
+              <Button name="SKButtonPlayerListItem17" inherits="SKButtonTemplatePlayerListItem" id="17">
                 <Anchors>
-                  <Anchor point="TOPLEFT" relativeTo="SuicideKingsPlayerListButton16" relativePoint="BOTTOMLEFT">
+                  <Anchor point="TOPLEFT" relativeTo="SKButtonPlayerListItem16" relativePoint="BOTTOMLEFT">
                     <Offset>
                       <AbsDimension x="0" y="0" />
                     </Offset>
                   </Anchor>
                 </Anchors>
               </Button>
-              <Button name="SuicideKingsPlayerListButton18" inherits="SuicideKingsPlayerListButtonTemplate" id="18">
+              <Button name="SKButtonPlayerListItem18" inherits="SKButtonTemplatePlayerListItem" id="18">
                 <Anchors>
-                  <Anchor point="TOPLEFT" relativeTo="SuicideKingsPlayerListButton17" relativePoint="BOTTOMLEFT">
+                  <Anchor point="TOPLEFT" relativeTo="SKButtonPlayerListItem17" relativePoint="BOTTOMLEFT">
                     <Offset>
                       <AbsDimension x="0" y="0" />
                     </Offset>
                   </Anchor>
                 </Anchors>
               </Button>
-              <Button name="SuicideKingsPlayerListButton19" inherits="SuicideKingsPlayerListButtonTemplate" id="19">
+              <Button name="SKButtonPlayerListItem19" inherits="SKButtonTemplatePlayerListItem" id="19">
                 <Anchors>
-                  <Anchor point="TOPLEFT" relativeTo="SuicideKingsPlayerListButton18" relativePoint="BOTTOMLEFT">
+                  <Anchor point="TOPLEFT" relativeTo="SKButtonPlayerListItem18" relativePoint="BOTTOMLEFT">
                     <Offset>
                       <AbsDimension x="0" y="0" />
                     </Offset>
                   </Anchor>
                 </Anchors>
               </Button>
-              <Button name="SuicideKingsPlayerListButton20" inherits="SuicideKingsPlayerListButtonTemplate" id="20">
+              <Button name="SKButtonPlayerListItem20" inherits="SKButtonTemplatePlayerListItem" id="20">
                 <Anchors>
-                  <Anchor point="TOPLEFT" relativeTo="SuicideKingsPlayerListButton19" relativePoint="BOTTOMLEFT">
+                  <Anchor point="TOPLEFT" relativeTo="SKButtonPlayerListItem19" relativePoint="BOTTOMLEFT">
                     <Offset>
                       <AbsDimension x="0" y="0" />
                     </Offset>
                   </Anchor>
                 </Anchors>
               </Button>
-              <Button name="SuicideKingsPlayerListButton21" inherits="SuicideKingsPlayerListButtonTemplate" id="21">
+              <Button name="SKButtonPlayerListItem21" inherits="SKButtonTemplatePlayerListItem" id="21">
                 <Anchors>
-                  <Anchor point="TOPLEFT" relativeTo="SuicideKingsPlayerListButton20" relativePoint="BOTTOMLEFT">
+                  <Anchor point="TOPLEFT" relativeTo="SKButtonPlayerListItem20" relativePoint="BOTTOMLEFT">
                     <Offset>
                       <AbsDimension x="0" y="0" />
                     </Offset>
@@ -275,7 +275,7 @@
               <AbsDimension x="296" y="331" />
             </Size>
             <Anchors>
-              <Anchor point="TOPRIGHT" relativeTo="GuildListFrame" relativePoint="TOPRIGHT">
+              <Anchor point="TOPRIGHT" relativeTo="SKFrameGuildList" relativePoint="TOPRIGHT">
                 <Offset>
                   <AbsDimension x="-90" y="-87" />
                 </Offset>
