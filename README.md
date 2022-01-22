@@ -10,3 +10,4 @@ Attempt at getting a true suicide kings lua
 - [ ] Add buttons in the center to be able to add the selected member to the right
 - [ ] Fix the tab layout for config vs list
 - [ ] Allow the window to be draggable
+- [ ] Fix initialization so when the app loads, it properly fills in details
