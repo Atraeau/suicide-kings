@@ -3,7 +3,7 @@
 ..\..\FrameXML\UI.xsd">
   <Button name="SuicideKingsPlayerListButtonTemplate" virtual="true">
     <Size>
-      <AbsDimension x="298" y="16" />
+      <AbsDimension x="200" y="16" />
     </Size>
     <Layers>
       <Layer level="BORDER">

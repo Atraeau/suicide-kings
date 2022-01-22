@@ -271,12 +271,12 @@
           </Frame>
           <ScrollFrame name="SuicideKingsPlayerListScrollFrame" inherits="FauxScrollFrameTemplate">
             <Size>
-              <AbsDimension x="296" y="237" />
+              <AbsDimension x="296" y="331" />
             </Size>
             <Anchors>
               <Anchor point="TOPRIGHT" relativeTo="GuildListFrame" relativePoint="TOPRIGHT">
                 <Offset>
-                  <AbsDimension x="-32" y="-87" />
+                  <AbsDimension x="-90" y="-87" />
                 </Offset>
               </Anchor>
             </Anchors>
@@ -289,7 +289,7 @@
               <Layer level="BACKGROUND">
                 <Texture file="Interface\PaperDollInfoFrame\UI-Character-ScrollBar">
                   <Size>
-                    <AbsDimension x="31" y="226" />
+                    <AbsDimension x="31" y="270" />
                   </Size>
                   <Anchors>
                     <Anchor point="TOPLEFT" relativePoint="TOPRIGHT">
@@ -298,7 +298,7 @@
                       </Offset>
                     </Anchor>
                   </Anchors>
-                  <TexCoords left="0" right="0.484375" top="0" bottom="0.8828125" />
+                  <TexCoords left="0" right="0.484375" top="0.0" bottom="1.0" />
                 </Texture>
                 <Texture file="Interface\PaperDollInfoFrame\UI-Character-ScrollBar">
                   <Size>
@@ -311,7 +311,7 @@
                       </Offset>
                     </Anchor>
                   </Anchors>
-                  <TexCoords left="0.515625" right="1.0" top="0" bottom="0.4140625" />
+                  <TexCoords left="0.515625" right="1.0" top="0.0" bottom="0.4140625" />
                 </Texture>
               </Layer>
             </Layers>
