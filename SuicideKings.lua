@@ -42,7 +42,6 @@ function SuicideKings_Update()
 end
 
 function PopulateGuildMembers()
-    -- print("PopulateGuileMembers")
     local numGuildMembers;
     local totalMembers, onlineMembers, onlineAndMobileMembers = GetNumGuildMembers();
 
