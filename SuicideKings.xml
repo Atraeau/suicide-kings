@@ -33,9 +33,9 @@
       <!-- Frame showing the current list -->
       <Frame name="SKFrameGuildList" setAllPoints="true" hidden="false">
         <Frames>
-          <Frame name="SKFrameGuildList">
+          <Frame name="SKFrameButtonCollection">
             <Size>
-              <AbsDimension x="300" y="200" />
+              <AbsDimension x="200" y="200" />
             </Size>
             <Anchors>
               <Anchor point="TOPLEFT">
@@ -272,12 +272,12 @@
           </Frame>
           <ScrollFrame name="SuicideKingsPlayerListScrollFrame" inherits="FauxScrollFrameTemplate">
             <Size>
-              <AbsDimension x="296" y="331" />
+              <AbsDimension x="31" y="331" />
             </Size>
             <Anchors>
-              <Anchor point="TOPRIGHT" relativeTo="SKFrameGuildList" relativePoint="TOPRIGHT">
+              <Anchor point="TOPRIGHT" relativeTo="SKFrameButtonCollection" relativePoint="TOPRIGHT">
                 <Offset>
-                  <AbsDimension x="-90" y="-87" />
+                  <AbsDimension x="0" y="-87" />
                 </Offset>
               </Anchor>
             </Anchors>
