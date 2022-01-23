@@ -49,7 +49,7 @@ function SuicideKings_OnShow()
 end
 
 function GuildMembers_Update()
-    --SuicideKingsFrameInset:SetPoint("TOPLEFT", 4, -80);
+    SuicideKingsFrameInset:SetPoint("TOPLEFT", 4, -80);
     PopulateGuildMembers();
 end
 
