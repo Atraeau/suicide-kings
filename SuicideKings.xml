@@ -33,7 +33,7 @@
       <!-- Frame showing the current list -->
       <Frame name="SKFrameGuildList" setAllPoints="true" hidden="false">
         <Frames>
-          <Frame name="SKFrameButtonCollection">
+          <Frame name="SKFrameGuildPlayerButtons">
             <Size>
               <AbsDimension x="200" y="200" />
             </Size>
@@ -79,189 +79,189 @@
                   </OnClick>
                 </Scripts>
               </Button>
-              <Button name="SKButtonPlayerListItem1" inherits="SKButtonTemplatePlayerListItem" id="1">
+              <Button name="SKButtonGuildPlayerListItem1" inherits="SKButtonTemplatePlayerListItem" id="1">
                 <Anchors>
-                  <Anchor point="TOPLEFT" relativeTo="SKFrameGuildList">
+                  <Anchor point="TOPLEFT" relativeTo="SKFrameGuildPlayerButtons">
                     <Offset>
                       <AbsDimension x="3" y="-82" />
                     </Offset>
                   </Anchor>
                 </Anchors>
               </Button>
-              <Button name="SKButtonPlayerListItem2" inherits="SKButtonTemplatePlayerListItem" id="2">
+              <Button name="SKButtonGuildPlayerListItem2" inherits="SKButtonTemplatePlayerListItem" id="2">
                 <Anchors>
-                  <Anchor point="TOPLEFT" relativeTo="SKButtonPlayerListItem1" relativePoint="BOTTOMLEFT">
+                  <Anchor point="TOPLEFT" relativeTo="SKButtonGuildPlayerListItem1" relativePoint="BOTTOMLEFT">
                     <Offset>
                       <AbsDimension x="0" y="0" />
                     </Offset>
                   </Anchor>
                 </Anchors>
               </Button>
-              <Button name="SKButtonPlayerListItem3" inherits="SKButtonTemplatePlayerListItem" id="3">
+              <Button name="SKButtonGuildPlayerListItem3" inherits="SKButtonTemplatePlayerListItem" id="3">
                 <Anchors>
-                  <Anchor point="TOPLEFT" relativeTo="SKButtonPlayerListItem2" relativePoint="BOTTOMLEFT">
+                  <Anchor point="TOPLEFT" relativeTo="SKButtonGuildPlayerListItem2" relativePoint="BOTTOMLEFT">
                     <Offset>
                       <AbsDimension x="0" y="0" />
                     </Offset>
                   </Anchor>
                 </Anchors>
               </Button>
-              <Button name="SKButtonPlayerListItem4" inherits="SKButtonTemplatePlayerListItem" id="4">
+              <Button name="SKButtonGuildPlayerListItem4" inherits="SKButtonTemplatePlayerListItem" id="4">
                 <Anchors>
-                  <Anchor point="TOPLEFT" relativeTo="SKButtonPlayerListItem3" relativePoint="BOTTOMLEFT">
+                  <Anchor point="TOPLEFT" relativeTo="SKButtonGuildPlayerListItem3" relativePoint="BOTTOMLEFT">
                     <Offset>
                       <AbsDimension x="0" y="0" />
                     </Offset>
                   </Anchor>
                 </Anchors>
               </Button>
-              <Button name="SKButtonPlayerListItem5" inherits="SKButtonTemplatePlayerListItem" id="5">
+              <Button name="SKButtonGuildPlayerListItem5" inherits="SKButtonTemplatePlayerListItem" id="5">
                 <Anchors>
-                  <Anchor point="TOPLEFT" relativeTo="SKButtonPlayerListItem4" relativePoint="BOTTOMLEFT">
+                  <Anchor point="TOPLEFT" relativeTo="SKButtonGuildPlayerListItem4" relativePoint="BOTTOMLEFT">
                     <Offset>
                       <AbsDimension x="0" y="0" />
                     </Offset>
                   </Anchor>
                 </Anchors>
               </Button>
-              <Button name="SKButtonPlayerListItem6" inherits="SKButtonTemplatePlayerListItem" id="6">
+              <Button name="SKButtonGuildPlayerListItem6" inherits="SKButtonTemplatePlayerListItem" id="6">
                 <Anchors>
-                  <Anchor point="TOPLEFT" relativeTo="SKButtonPlayerListItem5" relativePoint="BOTTOMLEFT">
+                  <Anchor point="TOPLEFT" relativeTo="SKButtonGuildPlayerListItem5" relativePoint="BOTTOMLEFT">
                     <Offset>
                       <AbsDimension x="0" y="0" />
                     </Offset>
                   </Anchor>
                 </Anchors>
               </Button>
-              <Button name="SKButtonPlayerListItem7" inherits="SKButtonTemplatePlayerListItem" id="7">
+              <Button name="SKButtonGuildPlayerListItem7" inherits="SKButtonTemplatePlayerListItem" id="7">
                 <Anchors>
-                  <Anchor point="TOPLEFT" relativeTo="SKButtonPlayerListItem6" relativePoint="BOTTOMLEFT">
+                  <Anchor point="TOPLEFT" relativeTo="SKButtonGuildPlayerListItem6" relativePoint="BOTTOMLEFT">
                     <Offset>
                       <AbsDimension x="0" y="0" />
                     </Offset>
                   </Anchor>
                 </Anchors>
               </Button>
-              <Button name="SKButtonPlayerListItem8" inherits="SKButtonTemplatePlayerListItem" id="8">
+              <Button name="SKButtonGuildPlayerListItem8" inherits="SKButtonTemplatePlayerListItem" id="8">
                 <Anchors>
-                  <Anchor point="TOPLEFT" relativeTo="SKButtonPlayerListItem7" relativePoint="BOTTOMLEFT">
+                  <Anchor point="TOPLEFT" relativeTo="SKButtonGuildPlayerListItem7" relativePoint="BOTTOMLEFT">
                     <Offset>
                       <AbsDimension x="0" y="0" />
                     </Offset>
                   </Anchor>
                 </Anchors>
               </Button>
-              <Button name="SKButtonPlayerListItem9" inherits="SKButtonTemplatePlayerListItem" id="9">
+              <Button name="SKButtonGuildPlayerListItem9" inherits="SKButtonTemplatePlayerListItem" id="9">
                 <Anchors>
-                  <Anchor point="TOPLEFT" relativeTo="SKButtonPlayerListItem8" relativePoint="BOTTOMLEFT">
+                  <Anchor point="TOPLEFT" relativeTo="SKButtonGuildPlayerListItem8" relativePoint="BOTTOMLEFT">
                     <Offset>
                       <AbsDimension x="0" y="0" />
                     </Offset>
                   </Anchor>
                 </Anchors>
               </Button>
-              <Button name="SKButtonPlayerListItem10" inherits="SKButtonTemplatePlayerListItem" id="10">
+              <Button name="SKButtonGuildPlayerListItem10" inherits="SKButtonTemplatePlayerListItem" id="10">
                 <Anchors>
-                  <Anchor point="TOPLEFT" relativeTo="SKButtonPlayerListItem9" relativePoint="BOTTOMLEFT">
+                  <Anchor point="TOPLEFT" relativeTo="SKButtonGuildPlayerListItem9" relativePoint="BOTTOMLEFT">
                     <Offset>
                       <AbsDimension x="0" y="0" />
                     </Offset>
                   </Anchor>
                 </Anchors>
               </Button>
-              <Button name="SKButtonPlayerListItem11" inherits="SKButtonTemplatePlayerListItem" id="11">
+              <Button name="SKButtonGuildPlayerListItem11" inherits="SKButtonTemplatePlayerListItem" id="11">
                 <Anchors>
-                  <Anchor point="TOPLEFT" relativeTo="SKButtonPlayerListItem10" relativePoint="BOTTOMLEFT">
+                  <Anchor point="TOPLEFT" relativeTo="SKButtonGuildPlayerListItem10" relativePoint="BOTTOMLEFT">
                     <Offset>
                       <AbsDimension x="0" y="0" />
                     </Offset>
                   </Anchor>
                 </Anchors>
               </Button>
-              <Button name="SKButtonPlayerListItem12" inherits="SKButtonTemplatePlayerListItem" id="12">
+              <Button name="SKButtonGuildPlayerListItem12" inherits="SKButtonTemplatePlayerListItem" id="12">
                 <Anchors>
-                  <Anchor point="TOPLEFT" relativeTo="SKButtonPlayerListItem11" relativePoint="BOTTOMLEFT">
+                  <Anchor point="TOPLEFT" relativeTo="SKButtonGuildPlayerListItem11" relativePoint="BOTTOMLEFT">
                     <Offset>
                       <AbsDimension x="0" y="0" />
                     </Offset>
                   </Anchor>
                 </Anchors>
               </Button>
-              <Button name="SKButtonPlayerListItem13" inherits="SKButtonTemplatePlayerListItem" id="13">
+              <Button name="SKButtonGuildPlayerListItem13" inherits="SKButtonTemplatePlayerListItem" id="13">
                 <Anchors>
-                  <Anchor point="TOPLEFT" relativeTo="SKButtonPlayerListItem12" relativePoint="BOTTOMLEFT">
+                  <Anchor point="TOPLEFT" relativeTo="SKButtonGuildPlayerListItem12" relativePoint="BOTTOMLEFT">
                     <Offset>
                       <AbsDimension x="0" y="0" />
                     </Offset>
                   </Anchor>
                 </Anchors>
               </Button>
-              <Button name="SKButtonPlayerListItem14" inherits="SKButtonTemplatePlayerListItem" id="14">
+              <Button name="SKButtonGuildPlayerListItem14" inherits="SKButtonTemplatePlayerListItem" id="14">
                 <Anchors>
-                  <Anchor point="TOPLEFT" relativeTo="SKButtonPlayerListItem13" relativePoint="BOTTOMLEFT">
+                  <Anchor point="TOPLEFT" relativeTo="SKButtonGuildPlayerListItem13" relativePoint="BOTTOMLEFT">
                     <Offset>
                       <AbsDimension x="0" y="0" />
                     </Offset>
                   </Anchor>
                 </Anchors>
               </Button>
-              <Button name="SKButtonPlayerListItem15" inherits="SKButtonTemplatePlayerListItem" id="15">
+              <Button name="SKButtonGuildPlayerListItem15" inherits="SKButtonTemplatePlayerListItem" id="15">
                 <Anchors>
-                  <Anchor point="TOPLEFT" relativeTo="SKButtonPlayerListItem14" relativePoint="BOTTOMLEFT">
+                  <Anchor point="TOPLEFT" relativeTo="SKButtonGuildPlayerListItem14" relativePoint="BOTTOMLEFT">
                     <Offset>
                       <AbsDimension x="0" y="0" />
                     </Offset>
                   </Anchor>
                 </Anchors>
               </Button>
-              <Button name="SKButtonPlayerListItem16" inherits="SKButtonTemplatePlayerListItem" id="16">
+              <Button name="SKButtonGuildPlayerListItem16" inherits="SKButtonTemplatePlayerListItem" id="16">
                 <Anchors>
-                  <Anchor point="TOPLEFT" relativeTo="SKButtonPlayerListItem15" relativePoint="BOTTOMLEFT">
+                  <Anchor point="TOPLEFT" relativeTo="SKButtonGuildPlayerListItem15" relativePoint="BOTTOMLEFT">
                     <Offset>
                       <AbsDimension x="0" y="0" />
                     </Offset>
                   </Anchor>
                 </Anchors>
               </Button>
-              <Button name="SKButtonPlayerListItem17" inherits="SKButtonTemplatePlayerListItem" id="17">
+              <Button name="SKButtonGuildPlayerListItem17" inherits="SKButtonTemplatePlayerListItem" id="17">
                 <Anchors>
-                  <Anchor point="TOPLEFT" relativeTo="SKButtonPlayerListItem16" relativePoint="BOTTOMLEFT">
+                  <Anchor point="TOPLEFT" relativeTo="SKButtonGuildPlayerListItem16" relativePoint="BOTTOMLEFT">
                     <Offset>
                       <AbsDimension x="0" y="0" />
                     </Offset>
                   </Anchor>
                 </Anchors>
               </Button>
-              <Button name="SKButtonPlayerListItem18" inherits="SKButtonTemplatePlayerListItem" id="18">
+              <Button name="SKButtonGuildPlayerListItem18" inherits="SKButtonTemplatePlayerListItem" id="18">
                 <Anchors>
-                  <Anchor point="TOPLEFT" relativeTo="SKButtonPlayerListItem17" relativePoint="BOTTOMLEFT">
+                  <Anchor point="TOPLEFT" relativeTo="SKButtonGuildPlayerListItem17" relativePoint="BOTTOMLEFT">
                     <Offset>
                       <AbsDimension x="0" y="0" />
                     </Offset>
                   </Anchor>
                 </Anchors>
               </Button>
-              <Button name="SKButtonPlayerListItem19" inherits="SKButtonTemplatePlayerListItem" id="19">
+              <Button name="SKButtonGuildPlayerListItem19" inherits="SKButtonTemplatePlayerListItem" id="19">
                 <Anchors>
-                  <Anchor point="TOPLEFT" relativeTo="SKButtonPlayerListItem18" relativePoint="BOTTOMLEFT">
+                  <Anchor point="TOPLEFT" relativeTo="SKButtonGuildPlayerListItem18" relativePoint="BOTTOMLEFT">
                     <Offset>
                       <AbsDimension x="0" y="0" />
                     </Offset>
                   </Anchor>
                 </Anchors>
               </Button>
-              <Button name="SKButtonPlayerListItem20" inherits="SKButtonTemplatePlayerListItem" id="20">
+              <Button name="SKButtonGuildPlayerListItem20" inherits="SKButtonTemplatePlayerListItem" id="20">
                 <Anchors>
-                  <Anchor point="TOPLEFT" relativeTo="SKButtonPlayerListItem19" relativePoint="BOTTOMLEFT">
+                  <Anchor point="TOPLEFT" relativeTo="SKButtonGuildPlayerListItem19" relativePoint="BOTTOMLEFT">
                     <Offset>
                       <AbsDimension x="0" y="0" />
                     </Offset>
                   </Anchor>
                 </Anchors>
               </Button>
-              <Button name="SKButtonPlayerListItem21" inherits="SKButtonTemplatePlayerListItem" id="21">
+              <Button name="SKButtonGuildPlayerListItem21" inherits="SKButtonTemplatePlayerListItem" id="21">
                 <Anchors>
-                  <Anchor point="TOPLEFT" relativeTo="SKButtonPlayerListItem20" relativePoint="BOTTOMLEFT">
+                  <Anchor point="TOPLEFT" relativeTo="SKButtonGuildPlayerListItem20" relativePoint="BOTTOMLEFT">
                     <Offset>
                       <AbsDimension x="0" y="0" />
                     </Offset>
@@ -275,7 +275,7 @@
               <AbsDimension x="31" y="331" />
             </Size>
             <Anchors>
-              <Anchor point="TOPRIGHT" relativeTo="SKFrameButtonCollection" relativePoint="TOPRIGHT">
+              <Anchor point="TOPRIGHT" relativeTo="SKFrameGuildPlayerButtons" relativePoint="TOPRIGHT">
                 <Offset>
                   <AbsDimension x="0" y="-87" />
                 </Offset>

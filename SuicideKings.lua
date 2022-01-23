@@ -54,14 +54,14 @@ function PopulateGuildMembers()
         -- in the display list
 
         local rosterIdx = guildOffset + displayButtonIdx;
-        local button = getglobal("SKButtonPlayerListItem"..displayButtonIdx);
+        local button = getglobal("SKButtonGuildPlayerListItem"..displayButtonIdx);
         button.guildIndex = rosterIdx;
 
         local fullName, rank, rankIndex, level, class, zone, note, officernote, online = GetGuildRosterInfo(rosterIdx);
         if not IsEmpty(fullName) then
             local displayedName = Ambiguate(fullName, "guild");
-            getglobal("SKButtonPlayerListItem"..displayButtonIdx.."Name"):SetText(displayedName);
-            getglobal("SKButtonPlayerListItem"..displayButtonIdx.."Rank"):SetText(rank);
+            getglobal("SKButtonGuildPlayerListItem"..displayButtonIdx.."Name"):SetText(displayedName);
+            getglobal("SKButtonGuildPlayerListItem"..displayButtonIdx.."Rank"):SetText(rank);
         end
     end
 
