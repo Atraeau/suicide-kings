@@ -10,6 +10,7 @@ function SuicideKings_OnEvent(self, event, payload)
             print("SK List not created yet")
         else
             ReadSuicideList(SuicideKingsList)
+            DisplayCurrentListMembers()
         end
     end
 end
@@ -32,20 +33,23 @@ function HandleSlashCommand(arg)
 end
 
 function SuicideKings_OnShow()
-    SuicideKings_Update();
+    GuildMembers_Update();
     C_GuildInfo.GuildRoster();
 end
 
-function SuicideKings_Update()
+function GuildMembers_Update()
     SuicideKingsFrameInset:SetPoint("TOPLEFT", 4, -80);
     PopulateGuildMembers();
 end
 
-function PopulateGuildMembers()
-    local numGuildMembers;
-    local totalMembers, onlineMembers, onlineAndMobileMembers = GetNumGuildMembers();
+function SuicideKingsListMembers_Update()
+    DisplayCurrentListMembers()
+end
 
-    local guildOffset = SuicideKingsPlayerListScrollFrame.offset or 0
+function PopulateGuildMembers()
+
+    local totalMembers, onlineMembers, onlineAndMobileMembers = GetNumGuildMembers();
+    local guildOffset = SuicideKingsGuildListScrollFrame.offset or 0
 
     -- Go through the members to display, starting at the top person, to the end person
     for displayButtonIdx=1, SK_GUILDMEMBERS_TO_DISPLAY, 1 do
@@ -65,7 +69,25 @@ function PopulateGuildMembers()
         end
     end
 
-    FauxScrollFrame_Update(SuicideKingsPlayerListScrollFrame, totalMembers, SK_GUILDMEMBERS_TO_DISPLAY, SK_GUILDMEMBERS_TO_HEIGHT );
+    FauxScrollFrame_Update(SuicideKingsGuildListScrollFrame, totalMembers, SK_GUILDMEMBERS_TO_DISPLAY, SK_GUILDMEMBERS_TO_HEIGHT );
+end
+
+function DisplayCurrentListMembers()
+    if (SuicideKingsList ~= nil) then
+        local totalListMembers = SuicideKings_GetCurrentListMemberCount()
+        local memberOffset = SuicideKingsListScrollFrame.offset or 0
+
+        for displayButtonIdx=1, SK_GUILDMEMBERS_TO_DISPLAY, 1 do
+            local lookupOffset = memberOffset + displayButtonIdx
+            local name, rank = unpack(SuicideKingsList[lookupOffset])
+
+            local displayedName = Ambiguate(name, "guild");
+            getglobal("SKButtonSuicideKingsListItem"..displayButtonIdx.."Name"):SetText(displayedName);
+            getglobal("SKButtonSuicideKingsListItem"..displayButtonIdx.."Rank"):SetText(rank);
+        end
+
+        FauxScrollFrame_Update(SuicideKingsListScrollFrame, totalListMembers, SK_GUILDMEMBERS_TO_DISPLAY, SK_GUILDMEMBERS_TO_HEIGHT );
+    end
 end
 
 -- Statefull function to assign the new list to the shared variable "SuicideKingsList"
@@ -78,16 +100,28 @@ function SuicideKings_DeleteList()
     SuicideKingsList = nil
 end
 
+function SuicideKings_GetCurrentListMemberCount()
+    return GetTableLength(SuicideKingsList)
+end
+
+function GetTableLength(table)
+    local count = 0
+    for _, _ in pairs(table) do
+        count = count + 1
+    end
+    return count
+end
+
 -- Static function to create list and return (stateless)
 function CreateSuicideList()
     local totalMembers, onlineMembers, onlineAndMobileMembers = GetNumGuildMembers();
     local suicideList = { }
 
-    for rosterIdx=1, totalMembers, 1 do
-        local fullName, rank, rankIndex, level, class, zone, note, officernote, online = GetGuildRosterInfo(rosterIdx);
-        if online then
-            table.insert(suicideList, fullName)
-        end
+    for idx=1, SK_GUILDMEMBERS_TO_DISPLAY + 1, 1 do
+        local fullName, rank, rankIndex, level, class, zone, note, officernote, online = GetGuildRosterInfo(idx);
+        --if online then
+            table.insert(suicideList, idx, {fullName, rank})
+        --end
     end
 
     return suicideList
@@ -98,7 +132,9 @@ function IsEmpty(s)
 end
 
 function ReadSuicideList(list)
-    for i,v in ipairs(list) do print("Name: "..v.. " Position: "..i) end
+    for i,v in ipairs(list) do 
+        local name, rank = unpack(v)
+        print("Name: "..name.. "rank".. rank .. " Position: "..i) end
 end
 
 function UpdateSuicideList(list)
