@@ -26,17 +26,43 @@
           </Anchors>
         </FontString>
       </Layer>
+      <!-- <Layer name="DebugLayer" level="BACKGROUND" setAllPoints="true">
+        <Texture>
+          <Color r="0" g="0.5" b="0" a="0.5"/>
+        </Texture>
+      </Layer> -->
     </Layers>
     <Frames>
       <!-- Frame providing options to configure a list -->
       <Frame name="SuicideKingsConfigFrame" setAllPoints="true" hidden="true">
       </Frame>
       <!-- Frame showing the current list -->
-      <Frame name="SKFrameGuildList" setAllPoints="true" hidden="false">
+      <Frame name="SKFrameGuildList" hidden="false" parent="SuicideKingsFrame">
+        <!-- <Layers>
+          <Layer name="DebugLayer" level="BACKGROUND" setAllPoints="true">
+            <Texture>
+              <Color r="1" g="0" b="0" a="1"/>
+            </Texture>
+          </Layer>
+        </Layers> -->
+        <Size x="231">
+        </Size>
+        <Anchors>
+          <Anchor point="TOPLEFT">
+            <Offset>
+              <AbsDimension x="7" y="-57" />
+            </Offset>
+          </Anchor>
+          <Anchor point="BOTTOM" relativeTo="$parent" relativePoint="BOTTOM">
+            <Offset>
+              <AbsDimension x="0" y="30" />
+            </Offset>
+          </Anchor>
+        </Anchors>
         <Frames>
-          <Frame name="SKFrameGuildPlayerButtons">
+          <Frame name="SKFrameGuildPlayerButtons" parent="SKFrameGuildList">
             <Size>
-              <AbsDimension x="200" y="200" />
+              <AbsDimension x="200" />
             </Size>
             <Anchors>
               <Anchor point="TOPLEFT">
@@ -44,13 +70,25 @@
                   <AbsDimension x="0" y="0" />
                 </Offset>
               </Anchor>
+              <Anchor point="BOTTOM" relativeTo="$parent" relativePoint="BOTTOM">
+                <Offset>
+                  <AbsDimension x="0" y="0" />
+                </Offset>
+              </Anchor>
             </Anchors>
+            <Layers>
+              <!-- <Layer name="DebugLayer" level="OVERLAY" setAllPoints="true">
+              <Texture>
+                <Color r="1" g="0" b="1" a="1"/>
+              </Texture>
+            </Layer> -->
+            </Layers>
             <Frames>
               <Button name="GuildListNameHeader" inherits="SuicideKingsGuildListColumnHeaderTemplate" text="Name">
                 <Anchors>
                   <Anchor point="TOPLEFT">
                     <Offset>
-                      <AbsDimension x="7" y="-57" />
+                      <AbsDimension x="0" y="0" />
                     </Offset>
                   </Anchor>
                 </Anchors>
@@ -82,10 +120,7 @@
               </Button>
               <Button name="SKButtonGuildPlayerListItem1" inherits="GuildButtonTemplatePlayerListItem" id="1">
                 <Anchors>
-                  <Anchor point="TOPLEFT" relativeTo="SKFrameGuildPlayerButtons">
-                    <Offset>
-                      <AbsDimension x="3" y="-82" />
-                    </Offset>
+                  <Anchor point="TOPLEFT" relativeTo="GuildListNameHeader" relativePoint="BOTTOMLEFT">
                   </Anchor>
                 </Anchors>
               </Button>
@@ -278,7 +313,7 @@
             <Anchors>
               <Anchor point="TOPRIGHT" relativeTo="SKFrameGuildPlayerButtons" relativePoint="TOPRIGHT">
                 <Offset>
-                  <AbsDimension x="0" y="-87" />
+                  <AbsDimension x="0" y="-29" />
                 </Offset>
               </Anchor>
             </Anchors>
@@ -321,16 +356,35 @@
         </Frames>
       </Frame>
 
-      <Frame name="SKFrameSuicideKingsList" setAllPoints="true" hidden="false">
+      <Frame name="SKFrameSuicideKingsList" hidden="false">
+        <Size x="231">
+        </Size>
+        <Anchors>
+          <Anchor point="TOPRIGHT">
+            <Offset>
+              <AbsDimension x="-7" y="-57" />
+            </Offset>
+          </Anchor>
+          <Anchor point="BOTTOM" relativeTo="$parent" relativePoint="BOTTOM">
+            <Offset>
+              <AbsDimension x="0" y="30" />
+            </Offset>
+          </Anchor>
+        </Anchors>
         <Frames>
-          <Frame name="SKFrameSuicideKingsListButtons">
+          <Frame name="SKFrameSuicideKingsListButtons" setAllPoints="true">
             <Size>
-              <AbsDimension x="200" y="200" />
+              <AbsDimension x="200" />
             </Size>
             <Anchors>
               <Anchor point="TOPLEFT">
                 <Offset>
-                  <AbsDimension x="600" y="0" />
+                  <AbsDimension x="0" y="0" />
+                </Offset>
+              </Anchor>
+              <Anchor point="BOTTOM" relativeTo="$parent" relativePoint="BOTTOM">
+                <Offset>
+                  <AbsDimension x="0" y="0" />
                 </Offset>
               </Anchor>
             </Anchors>
@@ -339,7 +393,7 @@
                 <Anchors>
                   <Anchor point="TOPLEFT">
                     <Offset>
-                      <AbsDimension x="7" y="-57" />
+                      <AbsDimension x="0" y="0" />
                     </Offset>
                   </Anchor>
                 </Anchors>
@@ -371,64 +425,43 @@
               </Button>
               <Button name="SKButtonSuicideKingsListItem1" inherits="SKButtonTemplatePlayerListItem" id="22">
                 <Anchors>
-                  <Anchor point="TOPLEFT" relativeTo="SKFrameSuicideKingsListButtons">
-                    <Offset>
-                      <AbsDimension x="3" y="-82" />
-                    </Offset>
+                  <Anchor point="TOPLEFT" relativeTo="SuicideKingsListNameHeader" relativePoint="BOTTOMLEFT">
                   </Anchor>
                 </Anchors>
               </Button>
               <Button name="SKButtonSuicideKingsListItem2" inherits="SKButtonTemplatePlayerListItem" id="23">
                 <Anchors>
                   <Anchor point="TOPLEFT" relativeTo="SKButtonSuicideKingsListItem1" relativePoint="BOTTOMLEFT">
-                    <Offset>
-                      <AbsDimension x="0" y="0" />
-                    </Offset>
                   </Anchor>
                 </Anchors>
               </Button>
               <Button name="SKButtonSuicideKingsListItem3" inherits="SKButtonTemplatePlayerListItem" id="24">
                 <Anchors>
                   <Anchor point="TOPLEFT" relativeTo="SKButtonSuicideKingsListItem2" relativePoint="BOTTOMLEFT">
-                    <Offset>
-                      <AbsDimension x="0" y="0" />
-                    </Offset>
                   </Anchor>
                 </Anchors>
               </Button>
               <Button name="SKButtonSuicideKingsListItem4" inherits="SKButtonTemplatePlayerListItem" id="25">
                 <Anchors>
                   <Anchor point="TOPLEFT" relativeTo="SKButtonSuicideKingsListItem3" relativePoint="BOTTOMLEFT">
-                    <Offset>
-                      <AbsDimension x="0" y="0" />
-                    </Offset>
                   </Anchor>
                 </Anchors>
               </Button>
               <Button name="SKButtonSuicideKingsListItem5" inherits="SKButtonTemplatePlayerListItem" id="26">
                 <Anchors>
                   <Anchor point="TOPLEFT" relativeTo="SKButtonSuicideKingsListItem4" relativePoint="BOTTOMLEFT">
-                    <Offset>
-                      <AbsDimension x="0" y="0" />
-                    </Offset>
                   </Anchor>
                 </Anchors>
               </Button>
               <Button name="SKButtonSuicideKingsListItem6" inherits="SKButtonTemplatePlayerListItem" id="27">
                 <Anchors>
                   <Anchor point="TOPLEFT" relativeTo="SKButtonSuicideKingsListItem5" relativePoint="BOTTOMLEFT">
-                    <Offset>
-                      <AbsDimension x="0" y="0" />
-                    </Offset>
                   </Anchor>
                 </Anchors>
               </Button>
               <Button name="SKButtonSuicideKingsListItem7" inherits="SKButtonTemplatePlayerListItem" id="28">
                 <Anchors>
                   <Anchor point="TOPLEFT" relativeTo="SKButtonSuicideKingsListItem6" relativePoint="BOTTOMLEFT">
-                    <Offset>
-                      <AbsDimension x="0" y="0" />
-                    </Offset>
                   </Anchor>
                 </Anchors>
               </Button>
@@ -567,7 +600,7 @@
             <Anchors>
               <Anchor point="TOPRIGHT" relativeTo="SKFrameSuicideKingsListButtons" relativePoint="TOPRIGHT">
                 <Offset>
-                  <AbsDimension x="0" y="-87" />
+                  <AbsDimension x="0" y="-29" />
                 </Offset>
               </Anchor>
             </Anchors>
@@ -607,6 +640,57 @@
               </Layer>
             </Layers>
           </ScrollFrame>
+        </Frames>
+      </Frame>
+
+      <Frame name="ConfigurationOptionsButtons" hidden="false">
+        <Anchors>
+          <Anchor point="TOPLEFT" relativeTo="SKFrameGuildList" relativePoint="TOPRIGHT">
+            <Offset>
+              <AbsDimension x="0" y="-30" />
+            </Offset>
+          </Anchor>
+          <Anchor point="BOTTOMLEFT" relativeTo="SKFrameGuildList" relativePoint="BOTTOMRIGHT">
+          </Anchor>
+          <Anchor point="TOPRIGHT" relativeTo="SKFrameSuicideKingsListButtons" relativePoint="TOPLEFT">
+            <Offset>
+              <AbsDimension x="0" y="-30" />
+            </Offset>
+          </Anchor>
+          <Anchor point="BOTTOMRIGHT" relativeTo="SKFrameSuicideKingsListButtons" relativePoint="BOTTOMLEFT">
+          </Anchor>
+        </Anchors>
+        <Layers>
+          <Layer level="OVERLAY" setAllPoints="true">
+            <Texture>
+              <Color r="1" g="1" b="1" a="0.5"/>
+            </Texture>
+          </Layer>
+        </Layers>
+        <Frames>
+          <Button name="GuildFrameAddMemberButton" inherits="UIPanelButtonTemplate" text="ADDMEMBER">
+            <Size>
+              <AbsDimension x="98" y="22"/>
+            </Size>
+            <Anchors>
+              <Anchor point="CENTER" relativeTo="ConfigurationOptionsButtons" relativePoint="CENTER">
+              </Anchor>
+            </Anchors>
+            <Scripts>
+              <!-- <OnClick>
+                StaticPopup_Show("ADD_GUILDMEMBER");
+              </OnClick>
+              <OnEnter>
+                GameTooltip_AddNewbieTip(self, ADDMEMBER, 1.0, 1.0, 1.0, NEWBIE_TOOLTIP_ADDMEMBER, 1);
+              </OnEnter>
+              <OnLeave>
+                GameTooltip:Hide();
+              </OnLeave> -->
+            </Scripts>
+            <NormalFont style="GameFontNormalSmall"/>
+            <HighlightFont style="GameFontHighlightSmall"/>
+            <DisabledFont style="GameFontDisableSmall"/>
+          </Button>
         </Frames>
       </Frame>
 
