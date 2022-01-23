@@ -1,6 +1,7 @@
 <Ui xmlns="http://www.blizzard.com/wow/ui/"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
 ..\FrameXML\UI.xsd">
+  <Script file="TableUtilities.lua"/>
   <Script file="SuicideKings.lua"/>
   <Include file="SuicideKingsTemplates.xml"/>
   <Frame name="SuicideKingsFrame" toplevel="true" parent="UIParent" movable="true" enableMouse="true" hidden="false" inherits="ButtonFrameTemplate">
@@ -79,7 +80,7 @@
                   </OnClick>
                 </Scripts>
               </Button>
-              <Button name="SKButtonGuildPlayerListItem1" inherits="SKButtonTemplatePlayerListItem" id="1">
+              <Button name="SKButtonGuildPlayerListItem1" inherits="GuildButtonTemplatePlayerListItem" id="1">
                 <Anchors>
                   <Anchor point="TOPLEFT" relativeTo="SKFrameGuildPlayerButtons">
                     <Offset>
@@ -88,7 +89,7 @@
                   </Anchor>
                 </Anchors>
               </Button>
-              <Button name="SKButtonGuildPlayerListItem2" inherits="SKButtonTemplatePlayerListItem" id="2">
+              <Button name="SKButtonGuildPlayerListItem2" inherits="GuildButtonTemplatePlayerListItem" id="2">
                 <Anchors>
                   <Anchor point="TOPLEFT" relativeTo="SKButtonGuildPlayerListItem1" relativePoint="BOTTOMLEFT">
                     <Offset>
@@ -97,7 +98,7 @@
                   </Anchor>
                 </Anchors>
               </Button>
-              <Button name="SKButtonGuildPlayerListItem3" inherits="SKButtonTemplatePlayerListItem" id="3">
+              <Button name="SKButtonGuildPlayerListItem3" inherits="GuildButtonTemplatePlayerListItem" id="3">
                 <Anchors>
                   <Anchor point="TOPLEFT" relativeTo="SKButtonGuildPlayerListItem2" relativePoint="BOTTOMLEFT">
                     <Offset>
@@ -106,7 +107,7 @@
                   </Anchor>
                 </Anchors>
               </Button>
-              <Button name="SKButtonGuildPlayerListItem4" inherits="SKButtonTemplatePlayerListItem" id="4">
+              <Button name="SKButtonGuildPlayerListItem4" inherits="GuildButtonTemplatePlayerListItem" id="4">
                 <Anchors>
                   <Anchor point="TOPLEFT" relativeTo="SKButtonGuildPlayerListItem3" relativePoint="BOTTOMLEFT">
                     <Offset>
@@ -115,7 +116,7 @@
                   </Anchor>
                 </Anchors>
               </Button>
-              <Button name="SKButtonGuildPlayerListItem5" inherits="SKButtonTemplatePlayerListItem" id="5">
+              <Button name="SKButtonGuildPlayerListItem5" inherits="GuildButtonTemplatePlayerListItem" id="5">
                 <Anchors>
                   <Anchor point="TOPLEFT" relativeTo="SKButtonGuildPlayerListItem4" relativePoint="BOTTOMLEFT">
                     <Offset>
@@ -124,7 +125,7 @@
                   </Anchor>
                 </Anchors>
               </Button>
-              <Button name="SKButtonGuildPlayerListItem6" inherits="SKButtonTemplatePlayerListItem" id="6">
+              <Button name="SKButtonGuildPlayerListItem6" inherits="GuildButtonTemplatePlayerListItem" id="6">
                 <Anchors>
                   <Anchor point="TOPLEFT" relativeTo="SKButtonGuildPlayerListItem5" relativePoint="BOTTOMLEFT">
                     <Offset>
@@ -133,7 +134,7 @@
                   </Anchor>
                 </Anchors>
               </Button>
-              <Button name="SKButtonGuildPlayerListItem7" inherits="SKButtonTemplatePlayerListItem" id="7">
+              <Button name="SKButtonGuildPlayerListItem7" inherits="GuildButtonTemplatePlayerListItem" id="7">
                 <Anchors>
                   <Anchor point="TOPLEFT" relativeTo="SKButtonGuildPlayerListItem6" relativePoint="BOTTOMLEFT">
                     <Offset>
@@ -142,7 +143,7 @@
                   </Anchor>
                 </Anchors>
               </Button>
-              <Button name="SKButtonGuildPlayerListItem8" inherits="SKButtonTemplatePlayerListItem" id="8">
+              <Button name="SKButtonGuildPlayerListItem8" inherits="GuildButtonTemplatePlayerListItem" id="8">
                 <Anchors>
                   <Anchor point="TOPLEFT" relativeTo="SKButtonGuildPlayerListItem7" relativePoint="BOTTOMLEFT">
                     <Offset>
@@ -151,7 +152,7 @@
                   </Anchor>
                 </Anchors>
               </Button>
-              <Button name="SKButtonGuildPlayerListItem9" inherits="SKButtonTemplatePlayerListItem" id="9">
+              <Button name="SKButtonGuildPlayerListItem9" inherits="GuildButtonTemplatePlayerListItem" id="9">
                 <Anchors>
                   <Anchor point="TOPLEFT" relativeTo="SKButtonGuildPlayerListItem8" relativePoint="BOTTOMLEFT">
                     <Offset>
@@ -160,7 +161,7 @@
                   </Anchor>
                 </Anchors>
               </Button>
-              <Button name="SKButtonGuildPlayerListItem10" inherits="SKButtonTemplatePlayerListItem" id="10">
+              <Button name="SKButtonGuildPlayerListItem10" inherits="GuildButtonTemplatePlayerListItem" id="10">
                 <Anchors>
                   <Anchor point="TOPLEFT" relativeTo="SKButtonGuildPlayerListItem9" relativePoint="BOTTOMLEFT">
                     <Offset>
@@ -169,7 +170,7 @@
                   </Anchor>
                 </Anchors>
               </Button>
-              <Button name="SKButtonGuildPlayerListItem11" inherits="SKButtonTemplatePlayerListItem" id="11">
+              <Button name="SKButtonGuildPlayerListItem11" inherits="GuildButtonTemplatePlayerListItem" id="11">
                 <Anchors>
                   <Anchor point="TOPLEFT" relativeTo="SKButtonGuildPlayerListItem10" relativePoint="BOTTOMLEFT">
                     <Offset>
@@ -178,7 +179,7 @@
                   </Anchor>
                 </Anchors>
               </Button>
-              <Button name="SKButtonGuildPlayerListItem12" inherits="SKButtonTemplatePlayerListItem" id="12">
+              <Button name="SKButtonGuildPlayerListItem12" inherits="GuildButtonTemplatePlayerListItem" id="12">
                 <Anchors>
                   <Anchor point="TOPLEFT" relativeTo="SKButtonGuildPlayerListItem11" relativePoint="BOTTOMLEFT">
                     <Offset>
@@ -187,7 +188,7 @@
                   </Anchor>
                 </Anchors>
               </Button>
-              <Button name="SKButtonGuildPlayerListItem13" inherits="SKButtonTemplatePlayerListItem" id="13">
+              <Button name="SKButtonGuildPlayerListItem13" inherits="GuildButtonTemplatePlayerListItem" id="13">
                 <Anchors>
                   <Anchor point="TOPLEFT" relativeTo="SKButtonGuildPlayerListItem12" relativePoint="BOTTOMLEFT">
                     <Offset>
@@ -196,7 +197,7 @@
                   </Anchor>
                 </Anchors>
               </Button>
-              <Button name="SKButtonGuildPlayerListItem14" inherits="SKButtonTemplatePlayerListItem" id="14">
+              <Button name="SKButtonGuildPlayerListItem14" inherits="GuildButtonTemplatePlayerListItem" id="14">
                 <Anchors>
                   <Anchor point="TOPLEFT" relativeTo="SKButtonGuildPlayerListItem13" relativePoint="BOTTOMLEFT">
                     <Offset>
@@ -205,7 +206,7 @@
                   </Anchor>
                 </Anchors>
               </Button>
-              <Button name="SKButtonGuildPlayerListItem15" inherits="SKButtonTemplatePlayerListItem" id="15">
+              <Button name="SKButtonGuildPlayerListItem15" inherits="GuildButtonTemplatePlayerListItem" id="15">
                 <Anchors>
                   <Anchor point="TOPLEFT" relativeTo="SKButtonGuildPlayerListItem14" relativePoint="BOTTOMLEFT">
                     <Offset>
@@ -214,7 +215,7 @@
                   </Anchor>
                 </Anchors>
               </Button>
-              <Button name="SKButtonGuildPlayerListItem16" inherits="SKButtonTemplatePlayerListItem" id="16">
+              <Button name="SKButtonGuildPlayerListItem16" inherits="GuildButtonTemplatePlayerListItem" id="16">
                 <Anchors>
                   <Anchor point="TOPLEFT" relativeTo="SKButtonGuildPlayerListItem15" relativePoint="BOTTOMLEFT">
                     <Offset>
@@ -223,7 +224,7 @@
                   </Anchor>
                 </Anchors>
               </Button>
-              <Button name="SKButtonGuildPlayerListItem17" inherits="SKButtonTemplatePlayerListItem" id="17">
+              <Button name="SKButtonGuildPlayerListItem17" inherits="GuildButtonTemplatePlayerListItem" id="17">
                 <Anchors>
                   <Anchor point="TOPLEFT" relativeTo="SKButtonGuildPlayerListItem16" relativePoint="BOTTOMLEFT">
                     <Offset>
@@ -232,7 +233,7 @@
                   </Anchor>
                 </Anchors>
               </Button>
-              <Button name="SKButtonGuildPlayerListItem18" inherits="SKButtonTemplatePlayerListItem" id="18">
+              <Button name="SKButtonGuildPlayerListItem18" inherits="GuildButtonTemplatePlayerListItem" id="18">
                 <Anchors>
                   <Anchor point="TOPLEFT" relativeTo="SKButtonGuildPlayerListItem17" relativePoint="BOTTOMLEFT">
                     <Offset>
@@ -241,7 +242,7 @@
                   </Anchor>
                 </Anchors>
               </Button>
-              <Button name="SKButtonGuildPlayerListItem19" inherits="SKButtonTemplatePlayerListItem" id="19">
+              <Button name="SKButtonGuildPlayerListItem19" inherits="GuildButtonTemplatePlayerListItem" id="19">
                 <Anchors>
                   <Anchor point="TOPLEFT" relativeTo="SKButtonGuildPlayerListItem18" relativePoint="BOTTOMLEFT">
                     <Offset>
@@ -250,7 +251,7 @@
                   </Anchor>
                 </Anchors>
               </Button>
-              <Button name="SKButtonGuildPlayerListItem20" inherits="SKButtonTemplatePlayerListItem" id="20">
+              <Button name="SKButtonGuildPlayerListItem20" inherits="GuildButtonTemplatePlayerListItem" id="20">
                 <Anchors>
                   <Anchor point="TOPLEFT" relativeTo="SKButtonGuildPlayerListItem19" relativePoint="BOTTOMLEFT">
                     <Offset>
@@ -259,7 +260,7 @@
                   </Anchor>
                 </Anchors>
               </Button>
-              <Button name="SKButtonGuildPlayerListItem21" inherits="SKButtonTemplatePlayerListItem" id="21">
+              <Button name="SKButtonGuildPlayerListItem21" inherits="GuildButtonTemplatePlayerListItem" id="21">
                 <Anchors>
                   <Anchor point="TOPLEFT" relativeTo="SKButtonGuildPlayerListItem20" relativePoint="BOTTOMLEFT">
                     <Offset>
@@ -368,7 +369,7 @@
                   </OnClick>
                 </Scripts>
               </Button>
-              <Button name="SKButtonSuicideKingsListItem1" inherits="SKButtonTemplatePlayerListItem" id="1">
+              <Button name="SKButtonSuicideKingsListItem1" inherits="SKButtonTemplatePlayerListItem" id="22">
                 <Anchors>
                   <Anchor point="TOPLEFT" relativeTo="SKFrameSuicideKingsListButtons">
                     <Offset>
@@ -377,7 +378,7 @@
                   </Anchor>
                 </Anchors>
               </Button>
-              <Button name="SKButtonSuicideKingsListItem2" inherits="SKButtonTemplatePlayerListItem" id="2">
+              <Button name="SKButtonSuicideKingsListItem2" inherits="SKButtonTemplatePlayerListItem" id="23">
                 <Anchors>
                   <Anchor point="TOPLEFT" relativeTo="SKButtonSuicideKingsListItem1" relativePoint="BOTTOMLEFT">
                     <Offset>
@@ -386,7 +387,7 @@
                   </Anchor>
                 </Anchors>
               </Button>
-              <Button name="SKButtonSuicideKingsListItem3" inherits="SKButtonTemplatePlayerListItem" id="3">
+              <Button name="SKButtonSuicideKingsListItem3" inherits="SKButtonTemplatePlayerListItem" id="24">
                 <Anchors>
                   <Anchor point="TOPLEFT" relativeTo="SKButtonSuicideKingsListItem2" relativePoint="BOTTOMLEFT">
                     <Offset>
@@ -395,7 +396,7 @@
                   </Anchor>
                 </Anchors>
               </Button>
-              <Button name="SKButtonSuicideKingsListItem4" inherits="SKButtonTemplatePlayerListItem" id="4">
+              <Button name="SKButtonSuicideKingsListItem4" inherits="SKButtonTemplatePlayerListItem" id="25">
                 <Anchors>
                   <Anchor point="TOPLEFT" relativeTo="SKButtonSuicideKingsListItem3" relativePoint="BOTTOMLEFT">
                     <Offset>
@@ -404,7 +405,7 @@
                   </Anchor>
                 </Anchors>
               </Button>
-              <Button name="SKButtonSuicideKingsListItem5" inherits="SKButtonTemplatePlayerListItem" id="5">
+              <Button name="SKButtonSuicideKingsListItem5" inherits="SKButtonTemplatePlayerListItem" id="26">
                 <Anchors>
                   <Anchor point="TOPLEFT" relativeTo="SKButtonSuicideKingsListItem4" relativePoint="BOTTOMLEFT">
                     <Offset>
@@ -413,7 +414,7 @@
                   </Anchor>
                 </Anchors>
               </Button>
-              <Button name="SKButtonSuicideKingsListItem6" inherits="SKButtonTemplatePlayerListItem" id="6">
+              <Button name="SKButtonSuicideKingsListItem6" inherits="SKButtonTemplatePlayerListItem" id="27">
                 <Anchors>
                   <Anchor point="TOPLEFT" relativeTo="SKButtonSuicideKingsListItem5" relativePoint="BOTTOMLEFT">
                     <Offset>
@@ -422,7 +423,7 @@
                   </Anchor>
                 </Anchors>
               </Button>
-              <Button name="SKButtonSuicideKingsListItem7" inherits="SKButtonTemplatePlayerListItem" id="7">
+              <Button name="SKButtonSuicideKingsListItem7" inherits="SKButtonTemplatePlayerListItem" id="28">
                 <Anchors>
                   <Anchor point="TOPLEFT" relativeTo="SKButtonSuicideKingsListItem6" relativePoint="BOTTOMLEFT">
                     <Offset>
@@ -431,7 +432,7 @@
                   </Anchor>
                 </Anchors>
               </Button>
-              <Button name="SKButtonSuicideKingsListItem8" inherits="SKButtonTemplatePlayerListItem" id="8">
+              <Button name="SKButtonSuicideKingsListItem8" inherits="SKButtonTemplatePlayerListItem" id="29">
                 <Anchors>
                   <Anchor point="TOPLEFT" relativeTo="SKButtonSuicideKingsListItem7" relativePoint="BOTTOMLEFT">
                     <Offset>
@@ -440,7 +441,7 @@
                   </Anchor>
                 </Anchors>
               </Button>
-              <Button name="SKButtonSuicideKingsListItem9" inherits="SKButtonTemplatePlayerListItem" id="9">
+              <Button name="SKButtonSuicideKingsListItem9" inherits="SKButtonTemplatePlayerListItem" id="30">
                 <Anchors>
                   <Anchor point="TOPLEFT" relativeTo="SKButtonSuicideKingsListItem8" relativePoint="BOTTOMLEFT">
                     <Offset>
@@ -449,7 +450,7 @@
                   </Anchor>
                 </Anchors>
               </Button>
-              <Button name="SKButtonSuicideKingsListItem10" inherits="SKButtonTemplatePlayerListItem" id="10">
+              <Button name="SKButtonSuicideKingsListItem10" inherits="SKButtonTemplatePlayerListItem" id="31">
                 <Anchors>
                   <Anchor point="TOPLEFT" relativeTo="SKButtonSuicideKingsListItem9" relativePoint="BOTTOMLEFT">
                     <Offset>
@@ -458,7 +459,7 @@
                   </Anchor>
                 </Anchors>
               </Button>
-              <Button name="SKButtonSuicideKingsListItem11" inherits="SKButtonTemplatePlayerListItem" id="11">
+              <Button name="SKButtonSuicideKingsListItem11" inherits="SKButtonTemplatePlayerListItem" id="32">
                 <Anchors>
                   <Anchor point="TOPLEFT" relativeTo="SKButtonSuicideKingsListItem10" relativePoint="BOTTOMLEFT">
                     <Offset>
@@ -467,7 +468,7 @@
                   </Anchor>
                 </Anchors>
               </Button>
-              <Button name="SKButtonSuicideKingsListItem12" inherits="SKButtonTemplatePlayerListItem" id="12">
+              <Button name="SKButtonSuicideKingsListItem12" inherits="SKButtonTemplatePlayerListItem" id="33">
                 <Anchors>
                   <Anchor point="TOPLEFT" relativeTo="SKButtonSuicideKingsListItem11" relativePoint="BOTTOMLEFT">
                     <Offset>
@@ -476,7 +477,7 @@
                   </Anchor>
                 </Anchors>
               </Button>
-              <Button name="SKButtonSuicideKingsListItem13" inherits="SKButtonTemplatePlayerListItem" id="13">
+              <Button name="SKButtonSuicideKingsListItem13" inherits="SKButtonTemplatePlayerListItem" id="34">
                 <Anchors>
                   <Anchor point="TOPLEFT" relativeTo="SKButtonSuicideKingsListItem12" relativePoint="BOTTOMLEFT">
                     <Offset>
@@ -485,7 +486,7 @@
                   </Anchor>
                 </Anchors>
               </Button>
-              <Button name="SKButtonSuicideKingsListItem14" inherits="SKButtonTemplatePlayerListItem" id="14">
+              <Button name="SKButtonSuicideKingsListItem14" inherits="SKButtonTemplatePlayerListItem" id="35">
                 <Anchors>
                   <Anchor point="TOPLEFT" relativeTo="SKButtonSuicideKingsListItem13" relativePoint="BOTTOMLEFT">
                     <Offset>
@@ -494,7 +495,7 @@
                   </Anchor>
                 </Anchors>
               </Button>
-              <Button name="SKButtonSuicideKingsListItem15" inherits="SKButtonTemplatePlayerListItem" id="15">
+              <Button name="SKButtonSuicideKingsListItem15" inherits="SKButtonTemplatePlayerListItem" id="36">
                 <Anchors>
                   <Anchor point="TOPLEFT" relativeTo="SKButtonSuicideKingsListItem14" relativePoint="BOTTOMLEFT">
                     <Offset>
@@ -503,7 +504,7 @@
                   </Anchor>
                 </Anchors>
               </Button>
-              <Button name="SKButtonSuicideKingsListItem16" inherits="SKButtonTemplatePlayerListItem" id="16">
+              <Button name="SKButtonSuicideKingsListItem16" inherits="SKButtonTemplatePlayerListItem" id="37">
                 <Anchors>
                   <Anchor point="TOPLEFT" relativeTo="SKButtonSuicideKingsListItem15" relativePoint="BOTTOMLEFT">
                     <Offset>
@@ -512,7 +513,7 @@
                   </Anchor>
                 </Anchors>
               </Button>
-              <Button name="SKButtonSuicideKingsListItem17" inherits="SKButtonTemplatePlayerListItem" id="17">
+              <Button name="SKButtonSuicideKingsListItem17" inherits="SKButtonTemplatePlayerListItem" id="38">
                 <Anchors>
                   <Anchor point="TOPLEFT" relativeTo="SKButtonSuicideKingsListItem16" relativePoint="BOTTOMLEFT">
                     <Offset>
@@ -521,7 +522,7 @@
                   </Anchor>
                 </Anchors>
               </Button>
-              <Button name="SKButtonSuicideKingsListItem18" inherits="SKButtonTemplatePlayerListItem" id="18">
+              <Button name="SKButtonSuicideKingsListItem18" inherits="SKButtonTemplatePlayerListItem" id="39">
                 <Anchors>
                   <Anchor point="TOPLEFT" relativeTo="SKButtonSuicideKingsListItem17" relativePoint="BOTTOMLEFT">
                     <Offset>
@@ -530,7 +531,7 @@
                   </Anchor>
                 </Anchors>
               </Button>
-              <Button name="SKButtonSuicideKingsListItem19" inherits="SKButtonTemplatePlayerListItem" id="19">
+              <Button name="SKButtonSuicideKingsListItem19" inherits="SKButtonTemplatePlayerListItem" id="40">
                 <Anchors>
                   <Anchor point="TOPLEFT" relativeTo="SKButtonSuicideKingsListItem18" relativePoint="BOTTOMLEFT">
                     <Offset>
@@ -539,7 +540,7 @@
                   </Anchor>
                 </Anchors>
               </Button>
-              <Button name="SKButtonSuicideKingsListItem20" inherits="SKButtonTemplatePlayerListItem" id="20">
+              <Button name="SKButtonSuicideKingsListItem20" inherits="SKButtonTemplatePlayerListItem" id="41">
                 <Anchors>
                   <Anchor point="TOPLEFT" relativeTo="SKButtonSuicideKingsListItem19" relativePoint="BOTTOMLEFT">
                     <Offset>
@@ -548,7 +549,7 @@
                   </Anchor>
                 </Anchors>
               </Button>
-              <Button name="SKButtonSuicideKingsListItem21" inherits="SKButtonTemplatePlayerListItem" id="21">
+              <Button name="SKButtonSuicideKingsListItem21" inherits="SKButtonTemplatePlayerListItem" id="42">
                 <Anchors>
                   <Anchor point="TOPLEFT" relativeTo="SKButtonSuicideKingsListItem20" relativePoint="BOTTOMLEFT">
                     <Offset>
@@ -608,6 +609,7 @@
           </ScrollFrame>
         </Frames>
       </Frame>
+
       <Button name="SuicideKingsConfigTab" inherits="SuicideKingsTabTemplate" id="1" text="Config" motionScriptsWhileDisabled="false">
         <Anchors>
           <Anchor point="BOTTOMLEFT" x="-2" y="-30" />
