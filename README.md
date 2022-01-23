@@ -11,3 +11,10 @@ Attempt at getting a true suicide kings lua
 - [ ] Fix the tab layout for config vs list
 - [ ] Allow the window to be draggable
 - [ ] Fix initialization so when the app loads, it properly fills in details
+- [ ] Make button click independent from guild selection and sk list selection
+- [ ] Reconcile list with guild members so you cannot have the same person in both
+- [ ] Add ability to select folks above a certain rank
+- [ ] Add ability to create a new list by name
+- [ ] Add new tab to handle managing transaction log (list of buttons with metadata for the item)
+- [ ] Investigate how to detect a piece of loot was given to someone to be able to add this to the transaction log
+- [ ] Create a simulation mode to allow folks to test without having to be in a real raid

@@ -33,6 +33,12 @@
         </FontString>
       </Layer>
     </Layers>
+    <Scripts>
+    <OnLoad>
+      self:RegisterForClicks("LeftButtonUp", "RightButtonUp");
+    </OnLoad>
+    <OnClick function="GuildMember_OnClick" />
+    </Scripts>
     <HighlightTexture file="Interface\FriendsFrame\UI-FriendsFrame-HighlightBar" alphaMode="ADD">
       <Size>
         <AbsDimension x="200" y="16" />

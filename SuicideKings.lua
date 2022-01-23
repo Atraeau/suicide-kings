@@ -67,6 +67,13 @@ function PopulateGuildMembers()
             getglobal("SKButtonGuildPlayerListItem"..displayButtonIdx.."Name"):SetText(displayedName);
             getglobal("SKButtonGuildPlayerListItem"..displayButtonIdx.."Rank"):SetText(rank);
         end
+
+        -- Highlight the correct who
+        if ( GetGuildRosterSelection() == rosterIdx ) then
+            button:LockHighlight();
+        else
+            button:UnlockHighlight();
+        end
     end
 
     FauxScrollFrame_Update(SuicideKingsGuildListScrollFrame, totalMembers, SK_GUILDMEMBERS_TO_DISPLAY, SK_GUILDMEMBERS_TO_HEIGHT );
@@ -81,12 +88,31 @@ function DisplayCurrentListMembers()
             local lookupOffset = memberOffset + displayButtonIdx
             local name, rank = unpack(SuicideKingsList[lookupOffset])
 
+            local button = getglobal("SKButtonSuicideKingsListItem"..displayButtonIdx);
+            button.guildIndex = lookupOffset;
+
             local displayedName = Ambiguate(name, "guild");
             getglobal("SKButtonSuicideKingsListItem"..displayButtonIdx.."Name"):SetText(displayedName);
             getglobal("SKButtonSuicideKingsListItem"..displayButtonIdx.."Rank"):SetText(rank);
+
+            -- Highlight the correct who
+            if ( GetGuildRosterSelection() == lookupOffset ) then
+                button:LockHighlight();
+            else
+                button:UnlockHighlight();
+            end
         end
 
         FauxScrollFrame_Update(SuicideKingsListScrollFrame, totalListMembers, SK_GUILDMEMBERS_TO_DISPLAY, SK_GUILDMEMBERS_TO_HEIGHT );
+    end
+end
+
+function GuildMember_OnClick(self, button)
+    if ( button == "LeftButton" ) then
+        SetGuildRosterSelection(self.guildIndex)
+        print("Clicked GuildIndex: ".. self.guildIndex)
+        GuildMembers_Update()
+        DisplayCurrentListMembers()
     end
 end
 
@@ -135,12 +161,6 @@ function ReadSuicideList(list)
     for i,v in ipairs(list) do 
         local name, rank = unpack(v)
         print("Name: "..name.. "rank".. rank .. " Position: "..i) end
-end
-
-function UpdateSuicideList(list)
-end
-
-function RandomizeSuicideList(suicideList)
 end
 
 function SuicideKingsGuildListColumn_SetWidth(frame, width)
