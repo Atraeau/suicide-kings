@@ -49,7 +49,7 @@ function SuicideKings_OnShow()
 end
 
 function GuildMembers_Update()
-    SuicideKingsFrameInset:SetPoint("TOPLEFT", 4, -80);
+    --SuicideKingsFrameInset:SetPoint("TOPLEFT", 4, -80);
     PopulateGuildMembers();
 end
 
@@ -167,7 +167,7 @@ end
 function CreateSuicideList()
     local suicideList = {}
 
-    for idx = 1, 15, 1 do
+    for idx = 1, 23, 1 do
         local fullName = GetGuildRosterInfo(idx);
         table.insert(suicideList, {fullName, idx})
     end
