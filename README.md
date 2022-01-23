@@ -3,7 +3,7 @@ Attempt at getting a true suicide kings lua
 
 
 ## TODO
-- [ ] Make a copy of the left list for the right to show all the players in the real list
+- [x] Make a copy of the left list for the right to show all the players in the real list
 - [x] Fix the scrollbar so that it fits properly in the frame
 - [x] Fix the scrollbar so that it actually scrolls the content
 - [ ] Allow a member to be selected when clicked on
