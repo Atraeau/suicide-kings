@@ -9,8 +9,8 @@ ReconciledGuildMembers = {} -- fullname, guildIndex
 SelectedGuildMember = nil
 SelectedSkListMember = nil
 
-TestGuildTable = {"FirstName", "SecondName", "ThirdName"}
-TestSKListTable = {"SecondName"}
+TestGuildTable = {{"FirstName", 1}, {"SecondName", 2}, {"ThirdName", 3}}
+TestSKListTable = {{"SecondName", 1}}
 
 function SuicideKings_OnEvent(self, event, payload)
     if (event == SK_EVENT_NAME_ADDON_LOADED and payload == "SuicideKings") then
@@ -19,6 +19,7 @@ function SuicideKings_OnEvent(self, event, payload)
         else
             ReadSuicideList(SuicideKingsList)
             ReconciledGuildMembers = ReconcileGuildWithList(SuicideKingsList, CreateGuildTable())
+            --ReconciledGuildMembers = ReconcileGuildWithList(TestSKListTable, TestGuildTable)
             print("Reconciled Member Count: " .. GetTableLength(ReconciledGuildMembers))
             GuildMembers_Update();
             DisplayCurrentListMembers()
