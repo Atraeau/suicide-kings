@@ -80,6 +80,9 @@
                   </Anchor>
                 </Anchors>
                 <Scripts>
+                  <OnLoad>
+                      SuicideKingsGuildListColumn_SetWidth(self, 200)
+                  </OnLoad>
                   <OnClick>
                       SuicideKings_CreateList();
                   </OnClick>
