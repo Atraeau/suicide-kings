@@ -152,4 +152,41 @@
     <NormalFont style="GameFontHighlightSmall" />
   </Button>
 
+  <Frame name="SKFrameTemplateDialogWithCover" inherits="BackdropTemplate" frameStrata="DIALOG" hidden="true" virtual="true">
+    <KeyValues>
+      <KeyValue key="backdropInfo" value="BACKDROP_DARK_DIALOG_32_32" type="global"/>
+    </KeyValues>
+    <Anchors>
+      <Anchor point="CENTER"/>
+    </Anchors>
+    <Frames>
+      <Frame name="$parentCover" parentKey="cover" useParentLevel="true" enableMouse="true">
+        <Layers>
+          <Layer level="BACKGROUND" textureSubLevel="-5">
+            <Texture name="$parentBlackFilter">
+              <Anchors>
+                <Anchor point="TOPLEFT" x="2" y="-2"/>
+                <Anchor point="BOTTOMRIGHT" x="-2" y="2"/>
+              </Anchors>
+              <Color r="0" b="0" g="0" a="0.4"/>
+            </Texture>
+          </Layer>
+        </Layers>
+        <Scripts>
+          <OnLoad>
+            self:SetAllPoints(self:GetParent():GetParent());
+          </OnLoad>
+        </Scripts>
+      </Frame>
+    </Frames>
+    <Scripts>
+      <OnShow>
+        --UIDropDownMenu_DisableDropDown(CompactRaidFrameManagerDisplayFrameProfileSelector);
+      </OnShow>
+      <OnHide>
+        --UIDropDownMenu_EnableDropDown(CompactRaidFrameManagerDisplayFrameProfileSelector);
+        self:Hide();	--If the parent is hidden, we'll cancel this popup.
+      </OnHide>
+    </Scripts>
+  </Frame>
 </Ui>

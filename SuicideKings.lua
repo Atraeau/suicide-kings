@@ -76,6 +76,8 @@ function GuildMember_OnClick(self, button)
     end
 end
 
+-- List Selector Logic
+
 function SuicideKingsListSelector_SetUp(self)
     print("called setup")
     UIDropDownMenu_SetWidth(self, 190);
@@ -92,6 +94,14 @@ function SuicideKingsListSelector_Initialize()
     UIDropDownMenu_AddButton(info);
     UIDropDownMenu_SetText(SuicideKingsFrameProfileSelector, name);
 
+	local otherInfo = UIDropDownMenu_CreateInfo();
+    local name = "Other List"
+    otherInfo.checked = false
+    otherInfo.text = name
+    otherInfo.func = SuicideKingsListSelector_SelectListButtonClicked
+    otherInfo.value = name
+    UIDropDownMenu_AddButton(otherInfo)  
+
     local newListInfo = UIDropDownMenu_CreateInfo();
 	newListInfo.text = "Create New";
 	newListInfo.func = SuicideKingsListSelector_CreateListButtonClicked;
@@ -101,21 +111,30 @@ function SuicideKingsListSelector_Initialize()
     UIDropDownMenu_AddButton(newListInfo);
 end
 
-function SuicideKingsListSelector_SelectListButtonClicked()
-    print("Select list button pressed")
+function SuicideKingsListSelector_SelectListButtonClicked(self)
+    print("Select list button pressed: ".. self.value)
 end
 
 function SuicideKingsListSelector_CreateListButtonClicked()
     print("create new list button pressed")
+    CompactUnitFrameProfiles_NewProfileButtonClicked()
 end
 
 function CompactUnitFrameProfiles_NewProfileButtonClicked()
+
+    SuicideKingsFrame.newSuicideKingsListDialog:Show();
 	-- if ( RaidProfileHasUnsavedChanges() ) then
 	-- 	CompactUnitFrameProfiles_ConfirmUnsavedChanges("new");
 	-- else
 	-- 	CompactUnitFrameProfiles_ShowNewProfileDialog();
 	-- end
 end
+
+function SuicideKingsFrame_HideNewProfileDialog()
+	SuicideKingsFrame.newSuicideKingsListDialog:Hide();
+end
+
+-- /List Selector Logic
 
 function PopulateGuildMembers()
     local remainingMemberCount = GetTableLength(ReconciledGuildMembers)

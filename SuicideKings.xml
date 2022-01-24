@@ -78,6 +78,120 @@
           </OnClick>
         </Scripts>
       </Button>
+			<Frame name="$parentNewSuicideKingsListDialog" inherits="SKFrameTemplateDialogWithCover" parentKey="newSuicideKingsListDialog">
+				<Size x="450" y="200"/>
+				<Layers>
+					<Layer level="ARTWORK">
+						<FontString name="$parentLabel" inherits="GameFontNormalLarge" justifyH="CENTER" text="New Suicide Kings List">
+							<Anchors>
+								<Anchor point="TOP" x="0" y="-13"/>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Frames>
+					<EditBox name="$parentEditBox" autoFocus="false" parentKey="editBox" letters="31">
+						<Size>
+							<AbsDimension x="210" y="32"/>
+						</Size>
+						<Anchors>
+							<Anchor point="TOP" relativeTo="$parentLabel" relativePoint="BOTTOM" x="0" y="-5"/>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<Texture name="$parentLeft" file="Interface\ChatFrame\UI-ChatInputBorder-Left2">
+									<Size>
+										<AbsDimension x="32" y="32"/>
+									</Size>
+									<Anchors>
+										<Anchor point="LEFT" x="-10" y="0"/>
+									</Anchors>
+								</Texture>
+								<Texture name="$parentRight" file="Interface\ChatFrame\UI-ChatInputBorder-Right2">
+									<Size>
+										<AbsDimension x="32" y="32"/>
+									</Size>
+									<Anchors>
+										<Anchor point="RIGHT" x="10" y="0"/>
+									</Anchors>
+								</Texture>
+								<Texture name="$parentMid" file="Interface\ChatFrame\UI-ChatInputBorder-Mid2" horizTile="true">
+									<Size>
+										<AbsDimension x="0" y="32"/>
+									</Size>
+									<Anchors>
+										<Anchor point="TOPLEFT" relativeTo="$parentLeft" relativePoint="TOPRIGHT">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+										<Anchor point="TOPRIGHT" relativeTo="$parentRight" relativePoint="TOPLEFT">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnEnterPressed>
+								self:GetParent().createButton:Click();
+							</OnEnterPressed>
+							<OnEscapePressed>
+								self:ClearFocus();
+							</OnEscapePressed>
+							<OnTextChanged>
+								CompactUnitFrameProfiles_UpdateNewProfileCreateButton();
+							</OnTextChanged>
+						</Scripts>
+						<FontString inherits="ChatFontNormal"/>
+					</EditBox>
+					<Frame name="$parentBaseProfileSelector" inherits="UIDropDownMenuTemplate">
+						<Anchors>
+							<Anchor point="BOTTOM" x="0" y="60"/>
+						</Anchors>
+						<Layers>
+							<Layer level="ARTWORK">
+								<FontString inherits="GameFontNormal" text="USE_EXISTING_PROFILE">
+									<Anchors>
+										<Anchor point="BOTTOM" relativeTo="$parent" relativePoint="TOP" x="0" y="5"/>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnShow function="CompactUnitFrameProfilesNewProfileDialogBaseProfileSelector_SetUp"/>
+						</Scripts>
+					</Frame>
+					<Button name="$parentCreateButton" inherits="UIPanelButtonTemplate" text="CREATE_COMPACT_UNIT_FRAME_PROFILE" parentKey="createButton">
+						<Size x="115" y="21"/>
+						<Anchors>
+							<Anchor point="BOTTOMRIGHT" relativePoint="BOTTOM" x="-5" y="15"/>
+						</Anchors>
+						<Scripts>
+							<OnClick>
+								--Also clicked via the OnEnterPressed script in the EditBox.
+								PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON);
+								CompactUnitFrameProfiles_CreateProfile(strtrim(self:GetParent().editBox:GetText()));
+								CompactUnitFrameProfiles_HideNewProfileDialog();
+							</OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentCancelButton" inherits="UIPanelButtonTemplate" text="CANCEL">
+						<Size x="115" y="21"/>
+						<Anchors>
+							<Anchor point="BOTTOMLEFT" relativePoint="BOTTOM" x="5" y="15"/>
+						</Anchors>
+						<Scripts>
+							<OnClick>
+								PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON);
+								SuicideKingsFrame_HideNewProfileDialog();
+							</OnClick>
+						</Scripts>
+					</Button>
+				</Frames>
+			</Frame>
       <Frame name="SKFrameSuicideKingsList" hidden="false">
         <Size x="231">
         </Size>
