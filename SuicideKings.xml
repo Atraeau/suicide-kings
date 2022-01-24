@@ -26,6 +26,19 @@
           </Anchors>
         </FontString>
       </Layer>
+      <Layer level="ARTWORK">
+        <FontString name="$parentTitle" text="Active List" inherits="GameFontNormal" justifyH="CENTER" justifyV="TOP">
+          <Anchors>
+            <Anchor point="CENTER">
+            </Anchor>
+            <Anchor point="TOP" relativeTo="$parent" relativePoint="TOP">
+              <Offset>
+                <AbsDimension y="-30"/>
+              </Offset>
+            </Anchor>
+          </Anchors>
+        </FontString>
+      </Layer>
       <!-- <Layer name="DebugLayer" level="BACKGROUND" setAllPoints="true">
         <Texture>
           <Color r="0" g="0.5" b="0" a="0.5"/>
@@ -33,6 +46,38 @@
       </Layer> -->
     </Layers>
     <Frames>
+      <Frame name="$parentProfileSelector" inherits="UIDropDownMenuTemplate">
+        <Anchors>
+          <Anchor point="TOPLEFT" relativeTo="$parentTitle" relativePoint="BOTTOMLEFT" x="-15" y="-10"/>
+        </Anchors>
+        <Scripts>
+          <OnShow function="SuicideKingsListSelector_SetUp"/>
+        </Scripts>
+      </Frame>
+      <Button name="$parentSaveButton" inherits="UIPanelButtonTemplate" text="SAVE">
+        <Size x="115" y="21"/>
+        <Anchors>
+          <Anchor point="TOPLEFT" relativeTo="$parentProfileSelector" relativePoint="BOTTOMLEFT" x="18" y="-10"/>
+        </Anchors>
+        <Scripts>
+          <OnClick>
+						--PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON);
+						--CompactUnitFrameProfiles_SaveChanges(CompactUnitFrameProfiles);
+          </OnClick>
+        </Scripts>
+      </Button>
+      <Button name="$parentDeleteButton" inherits="UIPanelButtonTemplate" text="DELETE">
+        <Anchors>
+          <Anchor point="TOPRIGHT" relativeTo="$parentProfileSelector" relativePoint="BOTTOMRIGHT" x="-15" y="-10"/>
+          <Anchor point="BOTTOMLEFT" relativeTo="$parentSaveButton" relativePoint="BOTTOMRIGHT" x="3" y="0"/>
+        </Anchors>
+        <Scripts>
+          <OnClick>
+						--PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON);
+						--CompactUnitFrameProfiles_ConfirmProfileDeletion(GetActiveRaidProfile());
+          </OnClick>
+        </Scripts>
+      </Button>
       <Frame name="SKFrameSuicideKingsList" hidden="false">
         <Size x="231">
         </Size>
@@ -641,22 +686,22 @@
           <Anchor point="TOPRIGHT" relativeTo="SuicideKingsFrame" relativePoint="TOPRIGHT">
           </Anchor>
         </Anchors>
-        <Layers>
+        <!-- <Layers>
           <Layer level="OVERLAY" setAllPoints="true">
             <Texture>
               <Color r="1" g="1" b="1" a="0.5"/>
             </Texture>
           </Layer>
-        </Layers>
+        </Layers> -->
         <Frames>
-          <Button name="GuildFrameAddMemberButton" inherits="UIPanelButtonTemplate" text="ADDMEMBER">
+          <Button name="$parentAddMemberButton" inherits="UIPanelButtonTemplate" text="ADDMEMBER">
             <Size>
-              <AbsDimension x="98" y="22"/>
+              <AbsDimension x="108" y="22"/>
             </Size>
             <Anchors>
               <Anchor point="TOPLEFT" relativeTo="ConfigurationOptionsButtons" relativePoint="TOPLEFT">
                 <Offset>
-                  <AbsDimension x="14" y="-14" />
+                  <AbsDimension x="14" y="-50" />
                 </Offset>
               </Anchor>
             </Anchors>
@@ -670,6 +715,125 @@
               <OnLeave>
                 GameTooltip:Hide();
               </OnLeave> -->
+            </Scripts>
+            <NormalFont style="GameFontNormalSmall"/>
+            <HighlightFont style="GameFontHighlightSmall"/>
+            <DisabledFont style="GameFontDisableSmall"/>
+          </Button>
+          <Button name="$parentRemoveMemberButton" inherits="UIPanelButtonTemplate" text="Remove Member">
+            <Size>
+              <AbsDimension x="108" y="22"/>
+            </Size>
+            <Anchors>
+              <Anchor point="TOPLEFT" relativeTo="$parentAddMemberButton" relativePoint="BOTTOMLEFT">
+                <Offset>
+                  <AbsDimension y="-7" />
+                </Offset>
+              </Anchor>
+            </Anchors>
+            <Scripts>
+            </Scripts>
+            <NormalFont style="GameFontNormalSmall"/>
+            <HighlightFont style="GameFontHighlightSmall"/>
+            <DisabledFont style="GameFontDisableSmall"/>
+          </Button>
+          <Button name="$parentMoveMemberUpButton" inherits="UIPanelButtonTemplate" text="Move Up">
+            <Size>
+              <AbsDimension x="108" y="22"/>
+            </Size>
+            <Anchors>
+              <Anchor point="TOPLEFT" relativeTo="$parentRemoveMemberButton" relativePoint="BOTTOMLEFT">
+                <Offset>
+                  <AbsDimension y="-7" />
+                </Offset>
+              </Anchor>
+            </Anchors>
+            <Scripts>
+            </Scripts>
+            <NormalFont style="GameFontNormalSmall"/>
+            <HighlightFont style="GameFontHighlightSmall"/>
+            <DisabledFont style="GameFontDisableSmall"/>
+          </Button>
+          <Button name="$parentMoveMemberDownButton" inherits="UIPanelButtonTemplate" text="Move Down">
+            <Size>
+              <AbsDimension x="108" y="22"/>
+            </Size>
+            <Anchors>
+              <Anchor point="TOPLEFT" relativeTo="$parentMoveMemberUpButton" relativePoint="BOTTOMLEFT">
+                <Offset>
+                  <AbsDimension y="-7" />
+                </Offset>
+              </Anchor>
+            </Anchors>
+            <Scripts>
+            </Scripts>
+            <NormalFont style="GameFontNormalSmall"/>
+            <HighlightFont style="GameFontHighlightSmall"/>
+            <DisabledFont style="GameFontDisableSmall"/>
+          </Button>
+          <Button name="$parentSuicideMemberButton" inherits="UIPanelButtonTemplate" text="Suicide">
+            <Size>
+              <AbsDimension x="108" y="22"/>
+            </Size>
+            <Anchors>
+              <Anchor point="TOPLEFT" relativeTo="$parentMoveMemberDownButton" relativePoint="BOTTOMLEFT">
+                <Offset>
+                  <AbsDimension y="-7" />
+                </Offset>
+              </Anchor>
+            </Anchors>
+            <Scripts>
+            </Scripts>
+            <NormalFont style="GameFontNormalSmall"/>
+            <HighlightFont style="GameFontHighlightSmall"/>
+            <DisabledFont style="GameFontDisableSmall"/>
+          </Button>
+          <Button name="$parentFreezeMemberButton" inherits="UIPanelButtonTemplate" text="Freeze Member">
+            <Size>
+              <AbsDimension x="108" y="22"/>
+            </Size>
+            <Anchors>
+              <Anchor point="TOPLEFT" relativeTo="$parentSuicideMemberButton" relativePoint="BOTTOMLEFT">
+                <Offset>
+                  <AbsDimension y="-7" />
+                </Offset>
+              </Anchor>
+            </Anchors>
+            <Scripts>
+            </Scripts>
+            <NormalFont style="GameFontNormalSmall"/>
+            <HighlightFont style="GameFontHighlightSmall"/>
+            <DisabledFont style="GameFontDisableSmall"/>
+          </Button>
+          <Button name="$parentUndoButton" inherits="UIPanelButtonTemplate" text="Undo">
+            <Size>
+              <AbsDimension x="50" y="22"/>
+            </Size>
+            <Anchors>
+              <Anchor point="TOPLEFT" relativeTo="$parentFreezeMemberButton" relativePoint="BOTTOMLEFT">
+                <Offset>
+                  <AbsDimension y="-7" />
+                </Offset>
+              </Anchor>
+            </Anchors>
+            <Scripts>
+            </Scripts>
+            <NormalFont style="GameFontNormalSmall"/>
+            <HighlightFont style="GameFontHighlightSmall"/>
+            <DisabledFont style="GameFontDisableSmall"/>
+          </Button>
+          <Button name="$parentRedoButton" inherits="UIPanelButtonTemplate" text="Redo">
+            <Size>
+              <AbsDimension x="50" y="22"/>
+            </Size>
+            <Anchors>
+              <Anchor point="TOPLEFT" relativeTo="$parentUndoButton" relativePoint="TOPRIGHT">
+                <Offset>
+                  <AbsDimension x="8" />
+                </Offset>
+              </Anchor>
+            </Anchors>
+            <Scripts>
             </Scripts>
             <NormalFont style="GameFontNormalSmall"/>
             <HighlightFont style="GameFontHighlightSmall"/>
